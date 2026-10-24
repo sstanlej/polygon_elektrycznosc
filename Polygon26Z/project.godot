@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Polygon Elektrycznosc"
-run/main_scene="res://Polygon26Z/main.tscn"
+config/name="Polygon26Z"
+run/main_scene="uid://dwcejfrutqtpa"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://Polygon26Z/icon.svg"
+config/icon="res://icon.svg"
 
 [display]
 
