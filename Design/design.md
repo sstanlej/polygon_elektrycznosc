@@ -1,129 +1,122 @@
 # Game Design Document (GDD)
 
-> **Project:** [Game Title]  
-> **Version:** 0.1  
+> **Project:** Wizards mayhem
+> **Version:** 0.314
 > **Status:** Draft  
 > **Last Updated:** YYYY-MM-DD  
-> **Author(s):** [Names]
+> **Author(s):** elektrycznosc
 
 ## 1. Overview
 ### 1.1 High Concept
-[Describe the game in 1–3 sentences.]
+You are a mage that fights robots' invasion. You use elemental magic spells to influence the environment to destroy your enemies.
 
 ### 1.2 Elevator Pitch
-[Explain why this game is interesting in 30 seconds.]
+1. You can make interesting combos with your spells.
+2. You have to think a few steps ahead.
+3. Satisfying combat
 
 ### 1.3 Vision Statement
-[What experience should players remember?]
+Destroying horde with spell combos and environment.
 
 ### 1.4 Design Pillars
-1. **[Pillar 1]:** [Core design principle]
-2. **[Pillar 2]:** [Core design principle]
-3. **[Pillar 3]:** [Core design principle]
-
-### 1.5 Target Audience
-- **Age range:**
-- **Player interests:**
-- **Target platforms:**
-
-### 1.6 Project Scope
-- **Genre:**
-- **Perspective:**
-- **Game mode:**
-- **Players:**
+1. **[Pillar 1]:** Elemental spell queue
+2. **[Pillar 2]:** Waves of enemies
+3. **[Pillar 3]:** Comboing spells
 
 ## 2. Game Pillars and Goals
 ### 2.1 Player Fantasy
-[Who does the player become, and what do they get to do?]
+We want to stop robots' invasion.
 
 ### 2.2 Player Goals
-- **Short-term:**
-- **Mid-term:**
-- **Long-term:**
-
-### 2.3 Unique Selling Points
-1. [USP 1]
-2. [USP 2]
-3. [USP 3]
+- **Short-term:** Setup combos to kill robots
+- **Mid-term:** Survive wave, upgrade yourself
+- **Long-term:** Stop ivasion
 
 ### 2.4 Non-Goals
-[What this game intentionally will not include.]
+Direct combat with enemies
 
 ## 3. Core Gameplay
 ### 3.1 Core Gameplay Loop
-1. [Action]
-2. [Challenge]
-3. [Reward]
-4. [Upgrade / preparation]
-5. [Repeat]
+1. Start wave
+2. Enemies spawn, you have to cast spell combos to kill them
+3. Satisfying robot kills with combos
+4. Upgrade yourself with drops from enemies
+5. Next wave
 
 ### 3.2 Controls
 | Action | Keyboard / Mouse | Controller | Touch |
 |---|---|---|---|
-| Move | | | |
-| Interact | | | |
-| Primary action | | | |
-| Secondary action | | | |
-| Pause | | | |
+| Move | W A S D | | |
+| Interact | Space/E | | |
+| Primary action | M1 Spell1 | | |
+| Secondary action | M2 Spell2 | | |
+| Pause | ESC | | |
 
 ### 3.3 Player Actions
-- **Movement:**
-- **Interaction:**
-- **Combat / challenge:**
-- **Traversal:**
-- **Progression:**
+- **Movement:** Walking
+- **Interaction:** ~ (potentially interacting with shop/environment???)
+- **Combat / challenge:** Creating / modifying environment by casting spells
+- **Traversal:** Walking
+- **Progression:** Beating waves, upgrades
 
 ### 3.4 Game Rules
-[Define rules, restrictions, failure states, and edge cases.]
+Rules:
+Restrictions: Number of orb slots, time of orb regeneration
+Faiulure states: Death of a player, (potentially protect altar??)
+Edge cases:
 
 ### 3.5 Difficulty and Challenge
-[Difficulty curve, checkpoints, assist options, and balancing rules.]
+Difficulty curve: Tougher enemies thruought waves
+Checkopints: NO
+Assist options: RNG with guaranted drops safeguard
+Balancing rules -
 
 ## 4. Mechanics and Systems
 ### 4.1 Mechanics Overview
 | Mechanic | Description | Input | Outcome | Priority |
 |---|---|---|---|---|
-| [Mechanic] | | | | Must-have |
+| Casting spells | Casting spells to influence environment | Player | Environment change | Must-have |
 
 ### 4.2 Combat / Conflict
-[Combat rules, damage, defenses, abilities, enemy behavior, if applicable.]
+Enemies have different attacks with different range
 
 ### 4.3 Health and Resources
-[Health, stamina, mana, currency, ammunition, lives, etc.]
+Passive health regeneration
 
 ### 4.4 Inventory and Equipment
-[Items, capacity, equipment slots, item rarity, and restrictions.]
+Basic 4 orb slots, wallet
 
 ### 4.5 Economy and Rewards
-[Currencies, costs, rewards, sinks, and progression balance.]
+Collectibles from enemies with which you can buy upgrades
 
 ### 4.6 AI and NPC Behavior
-[Behavior states, perception, decision-making, and reactions.]
+Enemies TODO
 
 ### 4.7 Saving and Loading
-[Save slots, autosave, checkpoints, persistence, and recovery.]
+NO
 
 ## 5. Progression and Content
 ### 5.1 Progression Structure
-[Levels, chapters, missions, runs, seasons, or sandbox progression.]
+Waves
 
 ### 5.2 Player Progression
-[XP, levels, skills, unlocks, upgrades, and milestones.]
+Statistics updates
 
 ### 5.3 Rewards
-[What players earn and how rewards affect gameplay.]
+Enemies drops currency with which you can buy upgrades.
+Chests with random items.
 
-### 5.4 Content List
+### 5.4 Content List TODO
 | ID | Content | Description | Status | Priority |
 |---|---|---|---|---|
 | C-001 | [Content] | | Planned | Must-have |
 
 ### 5.5 Replayability
-[Alternate paths, builds, procedural generation, New Game+, etc.]
+Every run is random, you can drop random items, random enemies types spawn.
 
-## 6. World and Narrative
-### 6.1 Setting
-[Time period, location, atmosphere, and world rules.]
+## 6. World and Narrative TODO
+### 6.1 Setting 
+Bad robots invade wizard's realm, he defends it.
 
 ### 6.2 Story Summary
 [Beginning, middle, ending, and major turning points.]
@@ -142,7 +135,7 @@
 ### 6.6 Lore and Terminology
 [Important history, concepts, names, and vocabulary.]
 
-## 7. Level and Mission Design
+## 7. Level and Mission Design TODO
 ### 7.1 Level Design Principles
 [Guidelines for layout, pacing, navigation, and exploration.]
 
@@ -164,28 +157,30 @@
 ### 7.4 Pacing
 [Intensity, downtime, narrative beats, and difficulty rhythm.]
 
-## 8. User Interface and UX
-### 8.1 UX Principles
-[Clarity, responsiveness, feedback, and ease of use.]
+## 8. User Interface and UX 
 
 ### 8.2 HUD
-[Health, objectives, resources, map, status effects, etc.]
+Orb slots, health bar, enemies health bars, currency amount, chosen items
 
 ### 8.3 Menus and Screens
 - Main menu
 - Pause menu
 - Settings
-- Inventory / character screen
-- Map / journal
-- Results / game over
+- ???minimap??? EVENTUALY
+- ??? altar/shop indicator ??? EVENTUALY
+- ??? Shop ???
+- Game over
 
 ### 8.4 User Flows
-[Describe important flows from launch to gameplay and exit.]
+1. Launch game
+2. Start run
+3. Wave X
+4. Survive wave
+5. Upgrade
+6. Die
+7. Reapeat / Quit
 
-### 8.5 Accessibility
-[Remappable controls, subtitles, color options, text scaling, difficulty assists, etc.]
-
-## 9. Art Direction
+## 9. Art Direction TODO Daisy
 ### 9.1 Visual Style
 [Art references, mood, palette, shapes, materials, and composition.]
 
@@ -208,16 +203,16 @@
 
 ## 10. Audio Design
 ### 10.1 Music
-[Themes, adaptive music, mood, and transitions.]
+Electronic (genres: EDM, hyperpop, electropop, ambient)
 
 ### 10.2 Sound Effects
-[Gameplay feedback, ambience, interactions, and impacts.]
+Created with synthetizers
 
 ### 10.3 Voice and Dialogue
-[Voice casting, recording, localization, and implementation.]
+Even if, by doodling. Animal crossing 4example
 
 ### 10.4 Audio Accessibility
-[Volume controls, subtitles, visual cues, and mono audio.]
+Volume controls
 
 ## 11. Technical Design
 ### 11.1 Technology Stack
@@ -225,73 +220,27 @@
 - **Programming language: GDScript**
 - **Version control: git, git-lfs**
 
-### 11.2 Architecture
+### 11.2 Architecture TODO
 [Major systems, modules, dependencies, and data flow.]
 
 ## 13. Production Plan
 ### 13.1 Team and Responsibilities
-| Role | Owner | Responsibilities |
-|---|---|---|
-| Game Design | | |
-| Programming | | |
-| Art | | |
-| Audio | | |
-| QA | | |
+| Role | Owner |
+|---|---|
+| Game Design | Sulik/szymandus |
+| Programming | Everyone |
+| Art | Daisy/Sulik | 
+| Audio | szymandus/sstanlej |
+| QA | Sulik |
 
-### 13.2 Milestones
-| Milestone | Deliverables | Target Date | Exit Criteria |
-|---|---|---|---|
-| Concept | | | |
-| Prototype | | | |
-| Vertical Slice | | | |
-| Alpha | | | |
-| Beta | | | |
-| Release | | | |
 
-### 13.3 Feature Backlog
-| ID | Feature | Priority | Owner | Status | Dependencies |
-|---|---|---|---|---|---|
-| F-001 | | Must-have | | Planned | |
 
 ### 13.4 Definition of Done
-[Acceptance criteria required for a feature to be considered complete.]
+Core gameplay with 4 elements featuring waves, few enemies to kill with boss, by influencing environment with spells. Basic art and music. Main menu.
 
-## 16. Risks, Assumptions, and Open Questions
-### 16.1 Risks
-| Risk | Probability | Impact | Mitigation |
-|---|---|---|---|
-| | | | |
-
-### 16.2 Assumptions
-- [Assumption to validate]
-
-### 16.3 Open Questions
-- [Question] — **Owner:** [Name] — **Due:** [Date]
-
-### 16.4 Decisions Log
-| Date | Decision | Rationale | Owner |
-|---|---|---|---|
-| YYYY-MM-DD | | | |
-
-## 17. Appendix
-### 17.1 Glossary
-| Term | Definition |
-|---|---|
-| | |
-
-### 17.2 References and Inspirations
-- [Title / link] — [What to learn from it]
-
-### 17.3 Supporting Documents
-- [Prototype]
-- [Art bible]
-- [Technical design document]
-- [Narrative bible]
-
----
 
 ## Document Maintenance
-- **Current version:** 0.1
-- **Last reviewed:** YYYY-MM-DD
-- **Next review:** YYYY-MM-DD
-- **Change summary:** [What changed]
+- **Current version:** 0.31415926
+- **Last reviewed:** 2026-10-25
+- **Next review:** 2026-10-?
+- **Change summary:** XD
