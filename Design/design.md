@@ -60,78 +60,107 @@ Direct combat with enemies
 - **Progression:** Beating waves, upgrades
 
 ## 4.4. Game Rules
-Rules:
-Restrictions: Number of orb slots, time of orb regeneration
-Faiulure states: Death of a player, (potentially protect altar??)
-Edge cases:
+- **Rules**:
+- **Restrictions**: Number of orb slots, time of orb regeneration
+- **Failure states**: Death of a player, (potentially protect altar??)
+- **Edge cases**:
 
 ## 4.5. Difficulty and Challenge
-Difficulty curve: Tougher enemies thruought waves
-Checkopints: NO
-Assist options: RNG with guaranted drops safeguard
-Balancing rules -
+   - **Difficulty curve**: Tougher enemies thruought waves
+   - **Checkpoints**: NO
+   - **Assist options**: RNG with guaranted drops safeguard
+   - **Balancing rules** -
 
 # 5. Mechanics and Systems
 ## 5.1. Mechanics Overview
-| Mechanic | Description | Input | Outcome | Priority |
-|---|---|---|---|---|
-| Casting spells | Casting spells to influence environment | Player | Environment change | Must-have |
+    Player can cast spells using orbs to alternate environment, which can result in destroying enemies.
 
-## 5.2. Fire Spells DRAFT
-### 5.2.1. "Molotov"
-Molotov spell creates circullar-like area made of flames that damages enemies. 
+    Alternating environment is often equall to creating tiles of certain elements. For more look at section 8.3.
 
-### 5.2.2. "Fire mine"
-Fire mine spell creates mine that explodes on contact with enemy ??and creates hole in ground??.
+## 5.2. Fire Spells
+### 5.2.1. Basic spell - "Ignite"
+    Ignite spell creates single fire tile on designated world tile. 
 
-## 5.3. Water Spells DRAFT
-### 5.3.1. "Water splash"
-Creates pool of water that slows enemies. 
-### 5.3.2. ???
+### 5.2.2. Advanced spell - "Ring of flames"
+    Creates ring of flames, circullar-like firewall. 
+    Different upgrades can modify its form (ex. to square, X etc.).
+
+### 5.2.3. Advanced spell - "Fire mine"
+    Fire mine spell creates mine that explodes on contact with enemy.
+
+### 5.2.4. Advanced spell - "Wildfire"
+    An area that has randomly appearing tiles of fire that deal damage to enemies.
+
+## 5.3. Water Spells
+### 5.3.1. Basic spell - "Lake"
+    Creates singular water tile. 
+### 5.3.2. Advanced spell - "River"
+    Creates water tiles in random direction forming river-like curved line.
 
 ## 5.4. Earth Spells DRAFT
-### 5.4.1. "Earth hole"
-Creates 1x1 hole in the ground that can trap enemies or player when they fall in there. In zxz hole there is only place for z enemies.
-### 5.4.2. "Earth wall"
-Creates 1x1 block of dirt that can be put on the ground and plays a role of an obstacle to enemies.
+### 5.4.1. Basic spell - "Wall"
+    Creates singular earth tile.
+### 5.4.2. Advanced spell - "Hole"
+    Creates singular hole tile.
+### 5.4.3. Advanced spell - "Terraform"
+    Creates vertical or horizontal line of earth tiles.
+    Optionally terraform could be casted in form of circle.
+### 5.4.4. Advanced spell - "Earthquake"
+    Casts "Hole" and "Wall" at random in certain area.
 
 ## 5.5. Air Spells DRAFT
-### 5.5.1. "Air blast"
-Knockbacks target one tile away from player.
-### 5.5.2. "Air tornado"
-Launches target into air for some time letting it access to upper layers or stunning them if they do not have any other tile to move to.
+### 5.5.1. Basic spell - "Blowback"
+    Knockbacks target one tile away from player.
+### 5.5.2. Advanced spell - "Tornado"
+    Sucks enemies in and creates wind tiles.
+### 5.5.3. Advanced spell - "Cloud"
+    Creates wind tiles in certain area.
+
 
 ## 5.6. Spells interactions DRAFT
-### 5.6.1. "Earth hole" + "Molotov" 
-Fills previously created hole with fire potentially making damage to enemies.
-### "Earth hole" + "Water splash" 
-Fills previously created hole with water potentially making damage to enemies.
-### "Earth hole" + "Air blast" 
-Can push target into earth hole potentially trapping it there.
-### "Earth hole" + "Air tornado"  
-Can get out target from earth hole letting it access to ground layer.
-### "Earth wall" + "Air blast"  
-Knockbacks earth wall one tile away potentially damaging enemy when colliding with it. It also can be knockbacked into hole to fill it.
-### "Earth wall" + "Air tornado"  
-Launches earth wall into air potentially creating passage through obstacle.
+### 5.6.1. "Hole" + "Lake" 
+    Fills previously created hole with water potentially making damage to enemies.
+### 5.6.2. "Hole" + "Blowback" 
+    Can push target into hole potentially trapping it there.
+### 5.6.3. "Hole" + "Tornado"  
+    Can suck enemy into hole.
+### 5.6.4. "Wall" + "Blowback"  
+    Knockbacks earth wall one tile away ??damaging enemy when colliding with it??. It also can be knockbacked into hole to fill it and suffocate enemy with dirt.
 
+### 5.6.5. "Fire Mine" + "Blowback"  
+    Knockbacks enemy into fire mine, which results in explosion and damage to mentioned enemy.
 
-## 5.7. Combat / Conflict
+## 5.7. Sacrificing orbs
+    Additionaly to casting spells player can "sacrifice" orb to get passive effects such as healing, becoming invisible etc.
+
+### 5.7.1. Fire orb:
+    Player can slightly boost dmg of fire tiles.
+
+### 5.7.2. Water orb:
+    Player can heal himself
+
+### 5.7.3. Earth orb:
+    Player can get armor that lasts X seconds
+
+### 5.7.4. Air orb:
+    Player can become invisible for X seconds
+
+## 5.8. Combat / Conflict
 Enemies have different attacks with different range
 
-## 5.8. Health and Resources
+## 5.9. Health and Resources
 Passive health regeneration
 
-## 5.9. Inventory and Equipment
+## 5.10. Inventory and Equipment
 Basic 4 orb slots, wallet
 
-## 5.10. Economy and Rewards
+## 5.11. Economy and Rewards
 Collectibles from enemies with which you can buy upgrades
 
-## 5.11. AI and NPC Behavior
+## 5.12. AI and NPC Behavior
 Enemies TODO
 
-## 5.12. Saving and Loading
+## 5.13. Saving and Loading
 NO
 
 # 6. Progression and Content
@@ -191,7 +220,29 @@ Bad robots invade wizard's realm, he defends it.
 - **Estimated duration:**
 
 ## 8.3. World Layout
-[Regions, hubs, routes, gates, landmarks, and connections.]
+World is divided into tiles. There are different types of tiles.
+
+### 8.3.1. Fire tiles:
+    Damage enemies and apply burn (dmg over time).
+### 8.3.2. Water tiles:
+    Damage enemies and apply slownewss.
+
+    Heal player slowly overtime.
+### 8.3.3. Wind tiles:
+    Slow enemies and periodically push them in random directions.
+### 8.3.4. Earth tiles:
+    Block paths (probably in form blocks of dirt).
+### 8.3.5. Hole tiles:
+    Enemies can fall inside it.
+### 8.3.6. (Optional) Sandstorm tiles:
+    Damage and slow enemies and make player invisible.
+
+    Spread to connecting wind tiles.
+### 8.3.7. (Optional) Rain tiles:
+    Slow and damage enemies and heal the player (similar to water).
+
+    Spread to connecting wind tiles.
+
 
 ## 8.4. Pacing
 [Intensity, downtime, narrative beats, and difficulty rhythm.]
