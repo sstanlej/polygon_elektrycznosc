@@ -7,7 +7,8 @@
 > **Author(s):** elektrycznosc
 
 # 2. Preamble
-    To not have headache while browsing this document it is advised to install "Markdown - All in One" extension is VSC.
+    To not have HEADACHE while browsing this document it is advised to install "Markdown - All in One" extension is VSC 
+    or view it in Github.
 
 # 3. Overview
 ## 3.1. High Concept
@@ -128,7 +129,8 @@ Direct combat with enemies
 ### 6.6.3. "Hole" + "Tornado"  
     Can suck enemy into hole.
 ### 6.6.4. "Wall" + "Blowback"  
-    Knockbacks earth wall one tile away ??damaging enemy when colliding with it??. It also can be knockbacked into hole to fill it and suffocate enemy with dirt.
+    Knockbacks earth wall one tile away ??damaging enemy when colliding with it??.
+    It also can be knockbacked into hole to fill it and suffocate enemy with dirt.
 
 ### 6.6.5. "Fire Mine" + "Blowback"  
     Knockbacks enemy into fire mine, which results in explosion and damage to mentioned enemy.
