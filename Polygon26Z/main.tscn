@@ -9,7 +9,7 @@
 
 [node name="Main" type="Node2D" unique_id=360287245]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987 node_paths=PackedStringArray("movement_controller")]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987 node_paths=PackedStringArray("movement_controller") groups=["Player"]]
 position = Vector2(84, 39)
 script = ExtResource("1_h2yge")
 movement_controller = NodePath("MovementController")
@@ -22,14 +22,12 @@ texture = ExtResource("1_ig7tw")
 script = ExtResource("2_0xm2m")
 player = NodePath("..")
 
-[node name="Enemy_test" type="CharacterBody2D" parent="." unique_id=890088346 node_paths=PackedStringArray("movement_controller")]
+[node name="Enemy_test" type="CharacterBody2D" parent="." unique_id=890088346]
+position = Vector2(175, 84)
 script = ExtResource("4_7mycd")
-movement_controller = NodePath("MovementController")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy_test" unique_id=168957195]
-position = Vector2(295, 100)
 texture = ExtResource("4_1bvp3")
 
-[node name="MovementController" type="Node" parent="Enemy_test" unique_id=1579859560 node_paths=PackedStringArray("enemy")]
+[node name="MovementController" type="Node" parent="Enemy_test" unique_id=1579859560]
 script = ExtResource("6_272bh")
-enemy = NodePath("..")
