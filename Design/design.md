@@ -4,6 +4,7 @@
 > **Author(s):** elektrycznosc
 
 # 2. Overview
+![Current concept art](./img/ui_concept_1.png)
 ## 2.1. High Concept
 You are a mage that fights waves of robots. You use elemental magic spells to influence the environment to destroy your enemies.
 
@@ -168,7 +169,7 @@ World is divided into tiles. There are different types of tiles.
 # 9. User Interface and UX 
 
 ## 9.1. HUD
-Orb slots, health bar, enemies health bars, currency amount, chosen items
+Orb slots, health bar, enemies health bars, currency amount, chosen items (like in the binding of isaac)
 
 ## 9.2. Menus and Screens
 - Main menu
