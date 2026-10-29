@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5hry00xmy7l5"]
+
+[ext_resource type="Script" uid="uid://ctop3rw10dgxi" path="res://Entities/Player/Scripts/Player.gd" id="1_lu8i8"]
+[ext_resource type="Texture2D" uid="uid://ddwabye78rghy" path="res://Entities/Player/Art/rocket.png" id="2_tekja"]
+[ext_resource type="Script" uid="uid://cdca4rkv6pgxh" path="res://Entities/Player/Scripts/MovementController.gd" id="3_5c2io"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
+radius = 4.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D" unique_id=584494599 groups=["Player"]]
+script = ExtResource("1_lu8i8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476062981]
+texture = ExtResource("2_tekja")
+
+[node name="MovementController" type="Node" parent="." unique_id=122565107]
+script = ExtResource("3_5c2io")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ocryv")
