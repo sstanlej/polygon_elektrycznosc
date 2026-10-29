@@ -6,15 +6,13 @@
 
 [node name="Main" type="Node2D" unique_id=360287245]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987 node_paths=PackedStringArray("movement_controller")]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987]
 position = Vector2(84, 39)
 script = ExtResource("1_h2yge")
-movement_controller = NodePath("MovementController")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1080217474]
 scale = Vector2(2, 2)
 texture = ExtResource("1_ig7tw")
 
-[node name="MovementController" type="Node" parent="Player" unique_id=347225338 node_paths=PackedStringArray("player")]
+[node name="MovementController" type="Node" parent="Player" unique_id=347225338]
 script = ExtResource("2_0xm2m")
-player = NodePath("..")

@@ -1,10 +1,11 @@
 class_name MovementController extends Node
 var direction: Vector2 = Vector2.ZERO
-@export var player: Player
-var movement_speed: float = 300
 
-func process_movement(delta) -> void:
-	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
-	player.velocity = input_direction * movement_speed
-	player.move_and_slide()
+@export var movement_speed: float = 100
+@onready var body: CharacterBody2D = get_parent()
 	
+func _physics_process(delta: float) -> void:
+	if body:
+		var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
+		body.velocity = input_direction * movement_speed
+		body.move_and_slide()
