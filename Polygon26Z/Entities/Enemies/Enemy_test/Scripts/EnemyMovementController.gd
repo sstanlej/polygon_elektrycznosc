@@ -12,7 +12,7 @@ func get_direction() -> Vector2:
 	var direction = player.global_position - body.global_position
 	return direction.normalized()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if body:
 		body.velocity = get_direction() * movement_speed
 		body.move_and_slide()
