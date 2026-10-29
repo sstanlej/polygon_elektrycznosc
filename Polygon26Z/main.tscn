@@ -34,10 +34,10 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAnAAAAAAADAAAAAAAmAAAAAAADAAA
 tile_set = SubResource("TileSet_ocryv")
 
 [node name="Player" parent="." unique_id=584494599 instance=ExtResource("2_lquwl")]
-position = Vector2(84, 39)
+position = Vector2(320, 320)
 
 [node name="Enemy_test" type="CharacterBody2D" parent="." unique_id=890088346]
-position = Vector2(175, 84)
+position = Vector2(124, 174)
 script = ExtResource("4_7mycd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy_test" unique_id=168957195]
