@@ -1,0 +1,1 @@
+class_name Enemy_test extends CharacterBody2D
