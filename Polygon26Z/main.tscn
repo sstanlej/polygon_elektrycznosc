@@ -3,16 +3,30 @@
 [ext_resource type="Script" uid="uid://ctop3rw10dgxi" path="res://Entities/Player/Scripts/Player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://d3tnbiptlgmn5" path="res://Entities/Player/Art/rocket.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cdca4rkv6pgxh" path="res://Entities/Player/Scripts/MovementController.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://fmljvi4uf5i7" path="res://Entities/Enemies/Enemy_test/Art/big_meteor.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://csd6gf0yaers2" path="res://Entities/Enemies/Enemy_test/Scripts/Enemy_test.gd" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://djcrd871prfvr" path="res://Entities/Enemies/Enemy_test/Scripts/EnemyMovementController.gd" id="6_272bh"]
 
 [node name="Main" type="Node2D" unique_id=360287245]
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2034230987 node_paths=PackedStringArray("movement_controller") groups=["Player"]]
 position = Vector2(84, 39)
 script = ExtResource("1_h2yge")
+movement_controller = NodePath("MovementController")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1080217474]
 scale = Vector2(2, 2)
 texture = ExtResource("1_ig7tw")
 
-[node name="MovementController" type="Node" parent="Player" unique_id=347225338]
+[node name="MovementController" type="Node" parent="Player" unique_id=347225338 node_paths=PackedStringArray("player")]
 script = ExtResource("2_0xm2m")
+player = NodePath("..")
+
+[node name="Enemy_test" type="CharacterBody2D" parent="." unique_id=890088346]
+position = Vector2(175, 84)
+script = ExtResource("4_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy_test" unique_id=168957195]
+texture = ExtResource("4_1bvp3")
+
+[node name="MovementController" type="Node" parent="Enemy_test" unique_id=1579859560]
+script = ExtResource("6_272bh")

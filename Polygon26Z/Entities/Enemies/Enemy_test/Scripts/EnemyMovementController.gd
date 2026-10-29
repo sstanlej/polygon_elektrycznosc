@@ -1,0 +1,18 @@
+class_name EnemyMovementController extends Node
+
+@export var movement_speed: float = 50
+@onready var body: CharacterBody2D = get_parent()
+
+var player: Player
+
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
+
+func get_direction() -> Vector2:
+	var direction = player.global_position - body.global_position
+	return direction.normalized()
+
+func _physics_process(delta: float) -> void:
+	if body:
+		body.velocity = get_direction() * movement_speed
+		body.move_and_slide()
