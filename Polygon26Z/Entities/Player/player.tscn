@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ctop3rw10dgxi" path="res://Entities/Player/Scripts/Player.gd" id="1_lu8i8"]
 [ext_resource type="Texture2D" uid="uid://ddwabye78rghy" path="res://Entities/Player/Art/rocket.png" id="2_tekja"]
 [ext_resource type="Script" uid="uid://cdca4rkv6pgxh" path="res://Entities/Player/Scripts/MovementController.gd" id="3_5c2io"]
+[ext_resource type="Script" uid="uid://bdlqcd67yqw8a" path="res://Entities/Player/Scripts/HealthComponent.gd" id="4_tekja"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
 radius = 4.0
@@ -20,3 +21,6 @@ script = ExtResource("3_5c2io")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ocryv")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=357670655]
+script = ExtResource("4_tekja")

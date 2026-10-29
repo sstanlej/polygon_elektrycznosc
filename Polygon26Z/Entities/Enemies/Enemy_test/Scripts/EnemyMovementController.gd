@@ -9,8 +9,11 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 func get_direction() -> Vector2:
+	if not player:
+		return Vector2.ZERO
 	var direction = player.global_position - body.global_position
 	return direction.normalized()
+	
 
 func _physics_process(_delta: float) -> void:
 	if body:
