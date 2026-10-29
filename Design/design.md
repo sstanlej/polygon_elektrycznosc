@@ -29,13 +29,13 @@ Player cannot resist, but cast another spell combo. It is just too satisfying.
 5. Next wave
 
 ## 5.2. Controls
-| Action | Keyboard / Mouse | Controller | Touch |
-|---|---|---|---|
-| Move | W A S D | | |
-| Interact | Space/E | | |
-| Primary action | M1 Spell1 | | |
-| Secondary action | M2 Spell2 | | |
-| Pause | ESC | | |
+| Action | Keyboard / Mouse |
+|---|---|
+| Move | W A S D |
+| Interact | Space/E |
+| Primary action | M1 Spell1 |
+| Secondary action | M2 Spell2 |
+| Pause | ESC |
 
 ## 5.3. Player Actions
 - **Movement:** Walking
