@@ -1,43 +1,23 @@
 # 1. Game Design Document (GDD)
 
 > **Project:** Wizards mayhem
-> **Version:** 0.314
-> **Status:** Draft  
-> **Last Updated:** YYYY-MM-DD  
 > **Author(s):** elektrycznosc
 
-# 2. Preamble
-    To not have HEADACHE while browsing this document it is advised to install "Markdown - All in One" extension is VSC 
-    or view it in Github.
+# 2. Overview
+## 2.1. High Concept
+You are a mage that fights waves of robots. You use elemental magic spells to influence the environment to destroy your enemies.
 
-# 3. Overview
-## 3.1. High Concept
-You are a mage that fights robots' invasion. You use elemental magic spells to influence the environment to destroy your enemies.
-
-## 3.2. Elevator Pitch
-1. You can make interesting combos with your spells.
-2. You have to think a few steps ahead.
-3. Satisfying combat
-
-## 3.3. Vision Statement
-Destroying horde with spell combos and environment.
-
-## 3.4. Design Pillars
+## 2.2. Design Pillars
 1. **[Pillar 1]:** Elemental spell queue
 2. **[Pillar 2]:** Waves of enemies
 3. **[Pillar 3]:** Comboing spells
+4. **[Pillar 4]:** Player should not be able to kill enemies directly
 
-# 4. Game Pillars and Goals
-## 4.1. Player Fantasy
-We want to stop robots' invasion.
+# 3. Current Milestone
+Core gameplay with at least one spell to cast. Basic art and music. Main menu.
 
-## 4.2. Player Goals
-- **Short-term:** Setup combos to kill robots
-- **Mid-term:** Survive wave, upgrade yourself
-- **Long-term:** Stop ivasion
-
-## 4.3. Non-Goals
-Direct combat with enemies
+# 4. Player Fantasy
+Player cannot resist, but cast another spell combo. It is just too satisfying.
 
 # 5. Core Gameplay
 ## 5.1. Core Gameplay Loop
@@ -60,20 +40,6 @@ Direct combat with enemies
 - **Movement:** Walking
 - **Interaction:** ~ (potentially interacting with shop/environment???)
 - **Combat / challenge:** Creating / modifying environment by casting spells
-- **Traversal:** Walking
-- **Progression:** Beating waves, upgrades
-
-## 5.4. Game Rules
-- **Rules**:
-- **Restrictions**: Number of orb slots, time of orb regeneration
-- **Failure states**: Death of a player, (potentially protect altar??)
-- **Edge cases**:
-
-## 5.5. Difficulty and Challenge
-   - **Difficulty curve**: Tougher enemies thruought waves
-   - **Checkpoints**: NO
-   - **Assist options**: RNG with guaranted drops safeguard
-   - **Balancing rules** -
 
 # 6. Mechanics and Systems
 ## 6.1. Mechanics Overview
@@ -153,20 +119,11 @@ Direct combat with enemies
 ## 6.8. Combat / Conflict
 Enemies have different attacks with different range
 
-## 6.9. Health and Resources
-Passive health regeneration
-
-## 6.10. Inventory and Equipment
+## 6.9. Inventory and Equipment
 Basic 4 orb slots, wallet
 
-## 6.11. Economy and Rewards
+## 6.10. Economy and Rewards
 Collectibles from enemies with which you can buy upgrades
-
-## 6.12. AI and NPC Behavior
-Enemies TODO
-
-## 6.13. Saving and Loading
-NO
 
 # 7. Progression and Content
 ## 7.1. Progression Structure
@@ -179,85 +136,41 @@ Statistics updates
 Enemies drops currency with which you can buy upgrades.
 Chests with random items.
 
-## 7.4. Content List TODO
-| ID | Content | Description | Status | Priority |
-|---|---|---|---|---|
-| C-001 | [Content] | | Planned | Must-have |
-
-## 7.5. Replayability
+## 7.4. Replayability
 Every run is random, you can drop random items, random enemies types spawn.
 
-# 8. World and Narrative TODO
-## 8.1. Setting 
-Bad robots invade wizard's realm, he defends it.
+# 8. Level and Mission Design TODO
 
-## 8.2. Story Summary
-[Beginning, middle, ending, and major turning points.]
-
-## 8.3. Characters
-| Character | Role | Motivation | Arc |
-|---|---|---|---|
-| [Name] | | | |
-
-## 8.4. Factions and Relationships
-[Groups, alliances, conflicts, and reputation systems.]
-
-## 8.5. Dialogue and Narrative Delivery
-[Cutscenes, environmental storytelling, dialogue, journals, etc.]
-
-## 8.6. Lore and Terminology
-[Important history, concepts, names, and vocabulary.]
-
-# 9. Level and Mission Design TODO
-## 9.1. Level Design Principles
-[Guidelines for layout, pacing, navigation, and exploration.]
-
-## 9.2. Level / Mission Template
-- **Name / ID:**
-- **Purpose:**
-- **Player objective:**
-- **Starting conditions:**
-- **Main challenges:**
-- **Key encounters:**
-- **Rewards:**
-- **Completion conditions:**
-- **Failure conditions:**
-- **Estimated duration:**
-
-## 9.3. World Layout
+## 8.1. World Layout
 World is divided into tiles. There are different types of tiles.
 
-### 9.3.1. Fire tiles:
+### 8.1.1. Fire tiles:
     Damage enemies and apply burn (dmg over time).
-### 9.3.2. Water tiles:
+### 8.1.2. Water tiles:
     Damage enemies and apply slownewss.
 
     Heal player slowly overtime.
-### 9.3.3. Wind tiles:
+### 8.1.3. Wind tiles:
     Slow enemies and periodically push them in random directions.
-### 9.3.4. Earth tiles:
+### 8.1.4. Earth tiles:
     Block paths (probably in form blocks of dirt).
-### 9.3.5. Hole tiles:
+### 8.1.5. Hole tiles:
     Enemies can fall inside it.
-### 9.3.6. (Optional) Sandstorm tiles:
+### 8.1.6. (Optional) Sandstorm tiles:
     Damage and slow enemies and make player invisible.
 
     Spread to connecting wind tiles.
-### 9.3.7. (Optional) Rain tiles:
+### 8.1.7. (Optional) Rain tiles:
     Slow and damage enemies and heal the player (similar to water).
 
     Spread to connecting wind tiles.
 
+# 9. User Interface and UX 
 
-## 9.4. Pacing
-[Intensity, downtime, narrative beats, and difficulty rhythm.]
-
-# 10. User Interface and UX 
-
-## 10.1. HUD
+## 9.1. HUD
 Orb slots, health bar, enemies health bars, currency amount, chosen items
 
-## 10.2. Menus and Screens
+## 9.2. Menus and Screens
 - Main menu
 - Pause menu
 - Settings
@@ -266,76 +179,36 @@ Orb slots, health bar, enemies health bars, currency amount, chosen items
 - ??? Shop ???
 - Game over
 
-## 10.3. User Flows
-1. Launch game
-2. Start run
-3. Wave X
-4. Survive wave
-5. Upgrade
-6. Die
-7. Reapeat / Quit
-
-# 11. Art Direction TODO Daisy
-## 11.1. Visual Style
+# 10. Art Direction TODO Daisy
+## 10.1. Visual Style
 [Art references, mood, palette, shapes, materials, and composition.]
 
-## 11.2. 10.2.Character Art
+## 10.2. Character Art
 [Silhouettes, proportions, animations, costumes, and variations.]
 
-## 11.3. Environment Art
+## 10.3. Environment Art
 [Architecture, terrain, props, lighting, and atmosphere.]
 
-## 11.4. VFX
+## 10.4. VFX
 [Combat effects, weather, particles, feedback, and transitions.]
 
-## 11.5. Animation
+## 10.5. Animation
 [Locomotion, interactions, combat, cinematics, and facial animation.]
 
-## 11.6. Art Asset List
-| Asset ID | Description | Reference | Priority | Status |
-|---|---|---|---|---|
-| A-001 | | | Must-have | Planned |
-
-# 12. Audio Design
-## 12.1. Music
+# 11. Audio Design
+## 11.1. Music
 Electronic (genres: EDM, hyperpop, electropop, ambient)
 
-## 12.2. Sound Effects
+## 11.2. Sound Effects
 Created with synthetizers
 
-## 12.3. Voice and Dialogue
+## 11.3. Voice and Dialogue
 Even if, by doodling. Animal crossing 4example
 
-## 12.4. Audio Accessibility
+## 11.4. Audio Accessibility
 Volume controls
 
-# 13. Technical Design
-## 13.1. Technology Stack
+# 12. Tech stack
 - **Engine: Godot 4.7.2**
 - **Programming language: GDScript**
 - **Version control: git, git-lfs**
-
-## 13.2. Architecture TODO
-[Major systems, modules, dependencies, and data flow.]
-
-# 14. Production Plan
-## 14.1. Team and Responsibilities
-| Role | Owner |
-|---|---|
-| Game Design | Sulik/szymandus |
-| Programming | Everyone |
-| Art | Daisy/Sulik | 
-| Audio | szymandus/sstanlej |
-| QA | Sulik |
-
-
-
-## 14.2. Definition of Done
-Core gameplay with 4 elements featuring waves, few enemies to kill with boss, by influencing environment with spells. Basic art and music. Main menu.
-
-
-# 15. Document Maintenance
-- **Current version:** 0.31415926
-- **Last reviewed:** 2026-10-25
-- **Next review:** 2026-10-?
-- **Change summary:** XD
