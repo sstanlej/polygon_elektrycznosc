@@ -9,6 +9,7 @@ var orbs_queue: Array[PackedScene]
 var slots: Array[OrbSlot]
 
 func _ready() -> void:
+	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	draw_slots(slots_amount)
 	build_orbs_queue(slots_amount)
 
@@ -30,4 +31,6 @@ func draw_slots(amount: int) -> void:
 			var slot_instance = orb_slot.instantiate() as OrbSlot
 			slots_container.add_child(slot_instance)
 			slots.append(slot_instance)
-		print(slots)
+
+func on_spell1_clicked(position: Vector2) -> void:
+	print("Spell1 at ", position)

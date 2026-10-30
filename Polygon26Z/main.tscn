@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://5hry00xmy7l5" path="res://Entities/Player/player.tscn" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://cpfi0fp6j7d6r" path="res://Entities/Camera/Scripts/CameraMovement.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://g57mubwyy04j" path="res://UI/GameOverlay/HUD/HUDManager.gd" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://b6va2xtgwvmwm" path="res://Entities/TileHighlight/Art/select_marker.png" id="7_272bh"]
-[ext_resource type="Script" uid="uid://l35gpdeja22g" path="res://Entities/TileHighlight/Scripts/TileHighlight.gd" id="8_5vw27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("1_7mycd")
@@ -43,11 +41,6 @@ position = Vector2(320, 320)
 script = ExtResource("6_7mycd")
 
 [node name="Camera2D" type="Camera2D" parent="CameraFrame" unique_id=845850353]
-
-[node name="TileHighlight" type="Sprite2D" parent="." unique_id=1791690307]
-position = Vector2(232, 152)
-texture = ExtResource("7_272bh")
-script = ExtResource("8_5vw27")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=643647969]
 
