@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://ctli3ptkm83tv"]
-
-[ext_resource type="Texture2D" uid="uid://dlubna6glq0c3" path="res://Entities/Player/Magic/Orbs/Art/fire_orb.png" id="1_ovghh"]
-
-[node name="FireOrb" type="Sprite2D" unique_id=461913704]
-texture = ExtResource("1_ovghh")
-centered = false

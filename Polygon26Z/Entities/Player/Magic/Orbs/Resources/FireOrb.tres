@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="OrbData" format=3 uid="uid://dcesn4ljwth6e"]
 
+[ext_resource type="PackedScene" uid="uid://w4g1ix42w2fk" path="res://Entities/Player/Magic/Spells/Ignite/FireArea.tscn" id="1_0rr6n"]
 [ext_resource type="Script" uid="uid://3uvwibrgbk7o" path="res://Entities/Player/Magic/Orbs/Scripts/OrbData.gd" id="1_us14v"]
 [ext_resource type="Texture2D" uid="uid://dlubna6glq0c3" path="res://Entities/Player/Magic/Orbs/Art/fire_orb.png" id="2_qq3sv"]
 
@@ -7,4 +8,5 @@
 script = ExtResource("1_us14v")
 name = "Fire Orb"
 texture = ExtResource("2_qq3sv")
+effect1_scene = ExtResource("1_0rr6n")
 metadata/_custom_type_script = "uid://3uvwibrgbk7o"

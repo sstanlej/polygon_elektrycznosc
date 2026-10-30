@@ -14,9 +14,5 @@ func die() -> void:
 	EventBus.player_died.emit()
 	super.die()
 
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed("Debug"):
-		take_damage(1)
-
 func _emit_initial_health() -> void:
 	EventBus.player_health_changed.emit(health, max_health)

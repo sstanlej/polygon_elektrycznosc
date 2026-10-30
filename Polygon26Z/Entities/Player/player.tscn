@@ -40,12 +40,14 @@ texture = ExtResource("6_4wf4l")
 script = ExtResource("4_tekja")
 max_health = 100
 
-[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container")]
+[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer")]
 position = Vector2(0, -7)
 script = ExtResource("5_5c2io")
 slots_container = NodePath("SlotsContainer")
 orb_slot = ExtResource("8_ap3xn")
 available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02")])
+orb_generation_cooldown = 1.5
+orb_generation_timer = NodePath("OrbGenerationTimer")
 
 [node name="SlotsContainer" type="VBoxContainer" parent="OrbsComponent" unique_id=156811686]
 custom_maximum_size = Vector2(16, -1)
@@ -61,3 +63,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 0
 alignment = 2
+
+[node name="OrbGenerationTimer" type="Timer" parent="OrbsComponent" unique_id=375643722]
+
+[connection signal="timeout" from="OrbsComponent/OrbGenerationTimer" to="OrbsComponent" method="_on_orb_generation_timer_timeout"]

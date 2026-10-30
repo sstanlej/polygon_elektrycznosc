@@ -12,6 +12,8 @@ func _process(_delta: float) -> void:
 	update_target_tile()
 	if Input.is_action_just_pressed("Spell1"):
 		EventBus.spell1_clicked.emit(target_tile_center)
+	if Input.is_action_just_pressed("Spell2"):
+		EventBus.spell2_clicked.emit(target_tile_center)
 
 func update_target_tile() -> void:
 	var mouse_world: Vector2 = get_global_mouse_position()

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://w4g1ix42w2fk"]
+
+[ext_resource type="Script" uid="uid://dhohe8h55rkg8" path="res://Entities/Player/Magic/Spells/Ignite/FireArea.gd" id="1_o3quf"]
+[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Player/Magic/Spells/Ignite/fire.png" id="2_7hy18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
+size = Vector2(16, 16)
+
+[node name="FireArea" type="Area2D" unique_id=1517581078 node_paths=PackedStringArray("progress_bar", "duration_timer")]
+script = ExtResource("1_o3quf")
+progress_bar = NodePath("ProgressBar")
+duration_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=2042611514]
+wait_time = 5.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=886863528]
+shape = SubResource("RectangleShape2D_ocryv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
+texture = ExtResource("2_7hy18")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 8.0
+offset_bottom = -9.0
+value = 50.0
+show_percentage = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
