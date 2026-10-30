@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ddwabye78rghy" path="res://Entities/Player/Art/rocket.png" id="2_tekja"]
 [ext_resource type="Script" uid="uid://cdca4rkv6pgxh" path="res://Entities/Player/Scripts/MovementController.gd" id="3_5c2io"]
 [ext_resource type="Script" uid="uid://dfbb4k1tmt3dw" path="res://Entities/Player/Scripts/PlayerHealthComponent.gd" id="4_tekja"]
+[ext_resource type="Script" uid="uid://g0iafj666kp1" path="res://Entities/Player/Magic/Orbs/Scripts/OrbsComponent.gd" id="5_5c2io"]
+[ext_resource type="PackedScene" uid="uid://by77xlmki4dpr" path="res://Entities/Player/Magic/Orbs/OrbSlot.tscn" id="6_4wf4l"]
+[ext_resource type="Script" uid="uid://3uvwibrgbk7o" path="res://Entities/Player/Magic/Orbs/Scripts/OrbData.gd" id="7_7a1se"]
+[ext_resource type="Resource" uid="uid://dcesn4ljwth6e" path="res://Entities/Player/Magic/Orbs/Resources/FireOrb.tres" id="8_lub02"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
 radius = 4.0
@@ -25,3 +29,25 @@ shape = SubResource("CapsuleShape2D_ocryv")
 [node name="HealthComponent" type="Node" parent="." unique_id=357670655]
 script = ExtResource("4_tekja")
 max_health = 100
+
+[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container")]
+position = Vector2(0, -7)
+script = ExtResource("5_5c2io")
+slots_container = NodePath("SlotsContainer")
+orb_slot = ExtResource("6_4wf4l")
+available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02")])
+
+[node name="SlotsContainer" type="VBoxContainer" parent="OrbsComponent" unique_id=156811686]
+custom_maximum_size = Vector2(16, -1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 2
