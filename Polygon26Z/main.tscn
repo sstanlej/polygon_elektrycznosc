@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8s3rqsvh41r0" path="res://Entities/Environment/Tilemap/Art/template_tileset.png" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://5hry00xmy7l5" path="res://Entities/Player/player.tscn" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://cpfi0fp6j7d6r" path="res://Entities/Camera/Scripts/CameraMovement.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://g57mubwyy04j" path="res://UI/GameOverlay/HUD/HUDManager.gd" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://b6va2xtgwvmwm" path="res://Entities/TileHighlight/Art/select_marker.png" id="7_272bh"]
 [ext_resource type="Script" uid="uid://l35gpdeja22g" path="res://Entities/TileHighlight/Scripts/TileHighlight.gd" id="8_5vw27"]
 
@@ -18,6 +19,12 @@ texture = ExtResource("1_7mycd")
 [sub_resource type="TileSet" id="TileSet_ocryv"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_272bh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.23546743, 0.0123059545, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.4875837, 0, 0.008507375, 1)
 
 [node name="Main" type="Node2D" unique_id=360287245]
 
@@ -41,3 +48,47 @@ script = ExtResource("6_7mycd")
 position = Vector2(232, 152)
 texture = ExtResource("7_272bh")
 script = ExtResource("8_5vw27")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=643647969]
+
+[node name="HUD" type="Control" parent="UILayer" unique_id=641830553 node_paths=PackedStringArray("health_bar", "health_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+script = ExtResource("6_272bh")
+health_bar = NodePath("HealthBar")
+health_label = NodePath("HealthBar/HealthLabel")
+
+[node name="HealthBar" type="ProgressBar" parent="UILayer/HUD" unique_id=1218169336]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 72.0
+offset_right = 50.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
+value = 50.0
+show_percentage = false
+
+[node name="HealthLabel" type="RichTextLabel" parent="UILayer/HUD/HealthBar" unique_id=1197590449]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 100.0
+offset_bottom = 14.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+text = "999/999"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
