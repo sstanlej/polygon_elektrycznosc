@@ -21,30 +21,30 @@ Player can cast at least one spell and fight at least one enemy with it. Basic a
 Player cannot resist, but cast another spell combo. It is just too satisfying.
 
 # 5. Core Gameplay
-[Core Gameplay](./subsections/5_core_gameplay.md)
+[Core Gameplay](./subsections/core_gameplay.md)
 
 
-# 6. Mechanics and Systems
-[Mechanics and systems](./subsections/6_mechanics_and_systems.md)
+# 6. Level Design TODO
 
-# 7. Level Design TODO
+[Level design](./subsections/level_design.md)
 
-[Level design](./subsections/7_level_design.md)
+# 7. Mechanics and Systems
+[Mechanics and systems](./subsections/mechanics_and_systems.md)
 
 
 # 8. UI and UX 
 
-[UI / UX](./subsections/8_ui_ux.md)
+[UI / UX](./subsections/ui_ux.md)
 
 
 # 9. Art TODO Daisy
 
-[Art](./subsections/9_art.md)
+[Art](./subsections/art.md)
 
 
 # 10. Audio Design
 
-[Audio](./subsections/10_audio_design.md)
+[Audio](./subsections/audio_design.md)
 
 # 11. Tech stack
 - **Engine: Godot 4.7.2**
