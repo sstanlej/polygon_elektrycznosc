@@ -11,9 +11,7 @@ func _ready() -> void:
 func on_health_initialized(max_health: int) -> void:
 	health_bar.max_value = max_health
 	health_bar.value = max_health
-	print("health initialized")
 
 func on_health_changed(current_health: int, max_health: int) -> void:
 	health_bar.max_value = max_health
 	health_bar.value = current_health
-	print("health changed")

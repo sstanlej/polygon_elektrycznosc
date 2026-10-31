@@ -7,6 +7,7 @@ var target_health: HealthComponent
 
 func on_apply(target: Creature) -> void:
 	target_health = target.get_node_or_null("HealthComponent")
+	super.on_apply(target)
 
 func on_tick(delta: float, target: Creature) -> void:
 	hurt_time_left -= delta

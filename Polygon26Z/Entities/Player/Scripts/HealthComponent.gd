@@ -9,7 +9,7 @@ var health: int
 
 func _ready() -> void:
 	health = max_health
-	call_deferred("init_health")
+	call_deferred("emit_health")
 
 func take_damage(amount: int) -> void:
 	health -= amount
@@ -20,5 +20,5 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	body.queue_free()
 
-func init_health() -> void:
+func emit_health() -> void:
 	health_initialized.emit(max_health)

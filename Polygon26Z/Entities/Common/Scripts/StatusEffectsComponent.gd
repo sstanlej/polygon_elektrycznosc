@@ -17,5 +17,9 @@ func _process(delta: float) -> void:
 			effects.remove_at(i)
 
 func add_effect(new_effect: Effect) -> void:
+	for effect in effects:
+		if effect.name == new_effect.name:
+			effect.on_refresh(target)
+			return
 	effects.append(new_effect)
 	new_effect.on_apply(target)
