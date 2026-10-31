@@ -2,7 +2,7 @@
 ## 1.1. Mechanics Overview
     Player can cast spells using orbs to alternate environment, which can result in destroying enemies.
 
-    Alternating environment is often equall to creating tiles of certain elements. For more look at section 8.3.
+    Alternating environment is often equall to creating tiles of certain elements. For more look at level design section.
 
 ## 1.2. Fire Spells
 ### 1.2.1. Basic spell - "Ignite"
