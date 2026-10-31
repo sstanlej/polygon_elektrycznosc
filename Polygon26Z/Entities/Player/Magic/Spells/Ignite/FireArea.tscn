@@ -10,6 +10,7 @@ size = Vector2(16, 16)
 script = ExtResource("1_o3quf")
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
+duration = 15.0
 
 [node name="Timer" type="Timer" parent="." unique_id=2042611514]
 wait_time = 5.0

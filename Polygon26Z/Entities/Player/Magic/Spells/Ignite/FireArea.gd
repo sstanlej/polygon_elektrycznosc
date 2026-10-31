@@ -13,5 +13,4 @@ func _process(_delta: float) -> void:
 	progress_bar.value = duration_timer.time_left
 
 func _on_timer_timeout() -> void:
-	print("Fire area finished. Goodbye.")
 	queue_free()
