@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://w4g1ix42w2fk"]
 
-[ext_resource type="Script" uid="uid://dhohe8h55rkg8" path="res://Entities/Player/Magic/Spells/Ignite/FireArea.gd" id="1_o3quf"]
-[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Player/Magic/Spells/Ignite/fire.png" id="2_7hy18"]
-[ext_resource type="Script" uid="uid://w5aktouosx6e" path="res://Entities/Effects/Effect.gd" id="2_gk2ki"]
-[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Effects/Burn/BurnEffect.gd" id="3_6htn2"]
+[ext_resource type="Script" uid="uid://dhohe8h55rkg8" path="res://Entities/Magic/Spells/Ignite/FireArea.gd" id="1_1k054"]
+[ext_resource type="Script" uid="uid://w5aktouosx6e" path="res://Entities/Magic/Effects/Effect.gd" id="2_lot6x"]
+[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Magic/Effects/Burn/BurnEffect.gd" id="3_djovl"]
+[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Magic/Spells/Ignite/fire.png" id="4_wbpk7"]
 
 [sub_resource type="Resource" id="Resource_7rivd"]
-script = ExtResource("3_6htn2")
+script = ExtResource("3_djovl")
 metadata/_custom_type_script = "uid://bv5cmamllpnbf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
 
 [node name="FireArea" type="Area2D" unique_id=1517581078 node_paths=PackedStringArray("progress_bar", "duration_timer")]
-script = ExtResource("1_o3quf")
+script = ExtResource("1_1k054")
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 15.0
-effects = Array[ExtResource("2_gk2ki")]([SubResource("Resource_7rivd")])
+effects = Array[ExtResource("2_lot6x")]([SubResource("Resource_7rivd")])
 
 [node name="Timer" type="Timer" parent="." unique_id=2042611514]
 wait_time = 5.0
@@ -27,7 +27,7 @@ one_shot = true
 shape = SubResource("RectangleShape2D_ocryv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
-texture = ExtResource("2_7hy18")
+texture = ExtResource("4_wbpk7")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
 offset_left = -8.0

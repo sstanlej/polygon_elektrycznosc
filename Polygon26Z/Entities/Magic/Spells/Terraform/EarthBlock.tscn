@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6bgjuelt8bng"]
 
-[ext_resource type="Script" uid="uid://c0w03pqyckry3" path="res://Entities/Player/Magic/Spells/Ignite/EarthBlock.gd" id="1_dcukh"]
-[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Entities/Player/Magic/Spells/Terraform/earth_tile.png" id="2_dcukh"]
+[ext_resource type="Script" uid="uid://c0w03pqyckry3" path="res://Entities/Magic/Spells/Ignite/EarthBlock.gd" id="1_dcukh"]
+[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Entities/Magic/Spells/Terraform/earth_tile.png" id="2_dcukh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
