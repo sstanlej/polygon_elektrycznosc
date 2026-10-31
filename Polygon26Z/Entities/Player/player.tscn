@@ -41,14 +41,15 @@ texture = ExtResource("6_4wf4l")
 script = ExtResource("4_tekja")
 max_health = 100
 
-[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer")]
+[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer", "orb_generation_bar")]
 position = Vector2(0, -7)
 script = ExtResource("5_5c2io")
 slots_container = NodePath("SlotsContainer")
 orb_slot = ExtResource("8_ap3xn")
 available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02"), ExtResource("11_ap3xn")])
-orb_generation_cooldown = 1.5
+orb_generation_cooldown = 2.0
 orb_generation_timer = NodePath("OrbGenerationTimer")
+orb_generation_bar = NodePath("SlotsContainer/OrbGenerationBar")
 
 [node name="SlotsContainer" type="VBoxContainer" parent="OrbsComponent" unique_id=156811686]
 custom_maximum_size = Vector2(16, -1)
@@ -64,6 +65,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 0
 alignment = 2
+
+[node name="OrbGenerationBar" type="ProgressBar" parent="OrbsComponent/SlotsContainer" unique_id=221622550]
+layout_mode = 2
+value = 50.0
+show_percentage = false
 
 [node name="OrbGenerationTimer" type="Timer" parent="OrbsComponent" unique_id=375643722]
 

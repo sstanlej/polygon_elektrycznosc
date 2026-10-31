@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://csd6gf0yaers2" path="res://Entities/Enemies/Enemy_test/Scripts/Enemy_test.gd" id="1_pq40t"]
 [ext_resource type="Texture2D" uid="uid://fmljvi4uf5i7" path="res://Entities/Enemies/Enemy_test/Art/big_meteor.png" id="2_v6g5f"]
 [ext_resource type="Script" uid="uid://djcrd871prfvr" path="res://Entities/Enemies/Enemy_test/Scripts/EnemyMovementController.gd" id="3_6e2ki"]
+[ext_resource type="Script" uid="uid://bdlqcd67yqw8a" path="res://Entities/Player/Scripts/HealthComponent.gd" id="3_v6g5f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ocryv"]
 radius = 12.0415945
@@ -12,6 +13,10 @@ script = ExtResource("1_pq40t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094052858]
 texture = ExtResource("2_v6g5f")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=2010636742]
+script = ExtResource("3_v6g5f")
+metadata/_custom_type_script = "uid://bdlqcd67yqw8a"
 
 [node name="MovementController" type="Node" parent="." unique_id=1522177853]
 script = ExtResource("3_6e2ki")

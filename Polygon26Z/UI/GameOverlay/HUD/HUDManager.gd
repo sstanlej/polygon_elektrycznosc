@@ -6,8 +6,8 @@ class_name HUDManager extends Control
 func _ready() -> void:
 	EventBus.player_health_changed.connect(update_health_bar)
 
-func update_health_bar(current: int, max: int) -> void:
-	health_bar.max_value = max
+func update_health_bar(current: int, max_health: int) -> void:
+	health_bar.max_value = max_health
 	health_bar.value = current
-	health_label.text = "%d / %d" % [current, max]
+	health_label.text = "%d / %d" % [current, max_health]
 	
