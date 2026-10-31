@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dhohe8h55rkg8" path="res://Entities/Player/Magic/Spells/Ignite/FireArea.gd" id="1_o3quf"]
 [ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Player/Magic/Spells/Ignite/fire.png" id="2_7hy18"]
+[ext_resource type="Script" uid="uid://w5aktouosx6e" path="res://Entities/Effects/Effect.gd" id="2_gk2ki"]
+[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Effects/Burn/BurnEffect.gd" id="3_6htn2"]
+
+[sub_resource type="Resource" id="Resource_7rivd"]
+script = ExtResource("3_6htn2")
+metadata/_custom_type_script = "uid://bv5cmamllpnbf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
@@ -11,6 +17,7 @@ script = ExtResource("1_o3quf")
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 15.0
+effects = Array[ExtResource("2_gk2ki")]([SubResource("Resource_7rivd")])
 
 [node name="Timer" type="Timer" parent="." unique_id=2042611514]
 wait_time = 5.0

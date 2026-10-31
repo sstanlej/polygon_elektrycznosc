@@ -1,1 +1,1 @@
-class_name Enemy_test extends CharacterBody2D
+class_name Enemy_test extends Creature

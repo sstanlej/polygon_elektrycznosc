@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://by77xlmki4dpr" path="res://Entities/Player/Magic/Orbs/OrbSlot.tscn" id="8_ap3xn"]
 [ext_resource type="Resource" uid="uid://dcesn4ljwth6e" path="res://Entities/Player/Magic/Orbs/Resources/FireOrb.tres" id="8_lub02"]
 [ext_resource type="Resource" uid="uid://uegn4vwj6k75" path="res://Entities/Player/Magic/Orbs/Resources/EarthOrb.tres" id="11_ap3xn"]
+[ext_resource type="Script" uid="uid://xy7y1i3ihpty" path="res://Entities/Common/Scripts/StatusEffectsComponent.gd" id="12_iplt1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
 radius = 4.0
@@ -72,5 +73,9 @@ value = 50.0
 show_percentage = false
 
 [node name="OrbGenerationTimer" type="Timer" parent="OrbsComponent" unique_id=375643722]
+
+[node name="StatusEffectsComponent" type="Node" parent="." unique_id=678921288]
+script = ExtResource("12_iplt1")
+metadata/_custom_type_script = "uid://xy7y1i3ihpty"
 
 [connection signal="timeout" from="OrbsComponent/OrbGenerationTimer" to="OrbsComponent" method="_on_orb_generation_timer_timeout"]
