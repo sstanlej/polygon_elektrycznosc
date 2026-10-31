@@ -7,21 +7,26 @@ class_name OrbsComponent extends Node2D
 @export var orb_generation_cooldown: float = 3
 @export var orb_generation_timer: Timer
 @export var orb_generation_bar: ProgressBar
+@export var orb_cast_cooldown: float = 3
+@export var orb_cast_timer: Timer
 
 var slots: Array[OrbSlot]
 var orbs_queue: Array[OrbData]
+var can_cast: bool = true
 
 var effects_container: Node
 
 func _ready() -> void:
+	build_slots(slots_amount)
+	add_random_orbs(slots_amount+1)
 	orb_generation_bar.max_value = orb_generation_cooldown
 	orb_generation_timer.wait_time = orb_generation_cooldown
-	orb_generation_timer.start()
+	if orbs_queue.size() <= slots_amount:
+		orb_generation_timer.start()
+	orb_cast_timer.wait_time = orb_cast_cooldown
 	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
 	effects_container = get_tree().get_first_node_in_group("EffectsContainer")
-	build_slots(slots_amount)
-	add_random_orbs(4)
 
 func _process(_delta: float) -> void:
 	orb_generation_bar.value = orb_generation_timer.time_left
@@ -46,6 +51,9 @@ func build_slots(amount: int) -> void:
 			var slot_instance = orb_slot.instantiate() as OrbSlot
 			slots_container.add_child(slot_instance)
 			slots.append(slot_instance)
+			if i == amount - 1:
+				slot_instance.self_modulate.g = 0.1
+				slot_instance.self_modulate.b = 0
 
 func set_slots() -> void:
 	for slot in slots:
@@ -64,6 +72,11 @@ func get_orbs_count() -> int:
 	return count
 
 func on_spell1_clicked(pos: Vector2) -> void:
+	if not can_cast:
+		print("can't cast, on cooldown!")
+		return
+	can_cast = false
+	orb_cast_timer.start()
 	var current_orb = pop_current_orb()
 	if not current_orb:
 		return
@@ -85,3 +98,6 @@ func _on_orb_generation_timer_timeout() -> void:
 		add_random_orbs(1)
 	if orbs_queue.size() > slots_amount:
 		orb_generation_timer.stop()
+
+func _on_orb_cast_timer_timeout() -> void:
+	can_cast = true

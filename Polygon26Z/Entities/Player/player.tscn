@@ -271,7 +271,7 @@ texture = ExtResource("5_ap3xn")
 script = ExtResource("4_tekja")
 max_health = 100
 
-[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer", "orb_generation_bar")]
+[node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer", "orb_generation_bar", "orb_cast_timer")]
 z_index = 20
 position = Vector2(0, -20)
 script = ExtResource("5_5c2io")
@@ -281,6 +281,8 @@ available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02"), ExtResou
 orb_generation_cooldown = 2.0
 orb_generation_timer = NodePath("OrbGenerationTimer")
 orb_generation_bar = NodePath("SlotsContainer/OrbGenerationBar")
+orb_cast_cooldown = 2.0
+orb_cast_timer = NodePath("OrbCastTimer")
 
 [node name="SlotsContainer" type="VBoxContainer" parent="OrbsComponent" unique_id=156811686]
 custom_maximum_size = Vector2(16, -1)
@@ -302,6 +304,9 @@ layout_mode = 2
 value = 50.0
 show_percentage = false
 
+[node name="OrbCastTimer" type="Timer" parent="OrbsComponent" unique_id=1256977409]
+wait_time = 3.0
+
 [node name="OrbGenerationTimer" type="Timer" parent="OrbsComponent" unique_id=375643722]
 
 [node name="StatusEffectsComponent" type="Node" parent="." unique_id=678921288]
@@ -317,4 +322,5 @@ parameters/Walk/blend_position = Vector2(0.63174605, 0.06818175)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=678108721]
 libraries/ = SubResource("AnimationLibrary_u86q5")
 
+[connection signal="timeout" from="OrbsComponent/OrbCastTimer" to="OrbsComponent" method="_on_orb_cast_timer_timeout"]
 [connection signal="timeout" from="OrbsComponent/OrbGenerationTimer" to="OrbsComponent" method="_on_orb_generation_timer_timeout"]
