@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d2pxjhebwons2" path="res://Entities/Player/Scripts/MouseController.gd" id="4_ap3xn"]
 [ext_resource type="Script" uid="uid://dfbb4k1tmt3dw" path="res://Entities/Player/Scripts/PlayerHealthComponent.gd" id="4_tekja"]
 [ext_resource type="Script" uid="uid://g0iafj666kp1" path="res://Entities/Player/Magic/Orbs/Scripts/OrbsComponent.gd" id="5_5c2io"]
-[ext_resource type="Texture2D" uid="uid://b6va2xtgwvmwm" path="res://Entities/TileHighlight/Art/select_marker.png" id="6_4wf4l"]
+[ext_resource type="Texture2D" uid="uid://um7d1080nnvm" path="res://Entities/Player/Magic/Orbs/Art/empty_orb_slot.png" id="5_ap3xn"]
 [ext_resource type="Script" uid="uid://3uvwibrgbk7o" path="res://Entities/Player/Magic/Orbs/Scripts/OrbData.gd" id="7_7a1se"]
 [ext_resource type="PackedScene" uid="uid://by77xlmki4dpr" path="res://Entities/Player/Magic/Orbs/OrbSlot.tscn" id="8_ap3xn"]
 [ext_resource type="Resource" uid="uid://dcesn4ljwth6e" path="res://Entities/Player/Magic/Orbs/Resources/FireOrb.tres" id="8_lub02"]
@@ -35,7 +35,7 @@ tile_highlight = NodePath("TileHighlight")
 
 [node name="TileHighlight" type="Sprite2D" parent="MouseController" unique_id=859269639]
 position = Vector2(40, 6)
-texture = ExtResource("6_4wf4l")
+texture = ExtResource("5_ap3xn")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=357670655]
 script = ExtResource("4_tekja")

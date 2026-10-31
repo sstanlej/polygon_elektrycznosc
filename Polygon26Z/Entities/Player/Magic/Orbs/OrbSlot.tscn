@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://by77xlmki4dpr"]
 
-[ext_resource type="Texture2D" uid="uid://b6va2xtgwvmwm" path="res://Entities/TileHighlight/Art/select_marker.png" id="1_k88py"]
+[ext_resource type="Texture2D" uid="uid://um7d1080nnvm" path="res://Entities/Player/Magic/Orbs/Art/empty_orb_slot.png" id="2_11bk6"]
 [ext_resource type="Script" uid="uid://drbtey2qefb14" path="res://Entities/Player/Magic/Orbs/Scripts/OrbSlot.gd" id="2_w61s5"]
 
 [node name="OrbSlot" type="TextureRect" unique_id=983659414 node_paths=PackedStringArray("orb_texture")]
 custom_maximum_size = Vector2(16, 16)
-texture = ExtResource("1_k88py")
+texture = ExtResource("2_11bk6")
 stretch_mode = 2
 script = ExtResource("2_w61s5")
 orb_texture = NodePath("OrbTexture")
