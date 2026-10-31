@@ -77,7 +77,7 @@
 Enemies have different attacks with different range
 
 ## 1.9. Inventory and Equipment
-Basic 4 orb slots, wallet
+Basic 3 orb slots, wallet
 
 ## 1.10. Economy and Rewards
 Collectibles from enemies with which you can buy upgrades
