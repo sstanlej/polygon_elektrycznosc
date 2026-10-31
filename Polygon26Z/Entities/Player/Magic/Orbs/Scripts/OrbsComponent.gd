@@ -21,6 +21,7 @@ func _ready() -> void:
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
 	effects_container = get_tree().get_first_node_in_group("EffectsContainer")
 	build_slots(slots_amount)
+	add_random_orbs(4)
 
 func _process(_delta: float) -> void:
 	orb_generation_bar.value = orb_generation_timer.time_left
@@ -51,6 +52,8 @@ func set_slots() -> void:
 		slot.remove_orb()
 	for i in orbs_queue.size():
 		var slot_index: int = slots.size() - 1 - i
+		if slot_index < 0:
+			return
 		slots[slot_index].set_orb(orbs_queue[i])
 
 func get_orbs_count() -> int:
@@ -78,7 +81,7 @@ func on_spell2_clicked(_position: Vector2) -> void:
 	print("Spell2 at ", position)
 
 func _on_orb_generation_timer_timeout() -> void:
-	if orbs_queue.size() < slots_amount:
+	if orbs_queue.size() <= slots_amount:
 		add_random_orbs(1)
-	if orbs_queue.size() >= slots_amount:
+	if orbs_queue.size() > slots_amount:
 		orb_generation_timer.stop()
