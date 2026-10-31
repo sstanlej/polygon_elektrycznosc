@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dwcejfrutqtpa"]
 
-[ext_resource type="Texture2D" uid="uid://8s3rqsvh41r0" path="res://Entities/Environment/Tilemap/Art/template_tileset.png" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://8s3rqsvh41r0" path="res://Environment/Tilemap/Art/template_tileset.png" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://5hry00xmy7l5" path="res://Entities/Player/player.tscn" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://cpfi0fp6j7d6r" path="res://Entities/Camera/Scripts/CameraMovement.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://g57mubwyy04j" path="res://UI/GameOverlay/HUD/HUDManager.gd" id="6_272bh"]
