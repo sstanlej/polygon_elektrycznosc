@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6va2xtgwvmwm"
-path="res://.godot/imported/select_marker.png-298379dbf424aa333a56d9db5abd3716.ctex"
+uid="uid://bq6f3ea0ratf8"
+path="res://.godot/imported/Wizard sheet.png-9a4098063482873fee4341114948898b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/TileHighlight/Art/select_marker.png"
-dest_files=["res://.godot/imported/select_marker.png-298379dbf424aa333a56d9db5abd3716.ctex"]
+source_file="res://Entities/Player/Art/Wizard sheet.png"
+dest_files=["res://.godot/imported/Wizard sheet.png-9a4098063482873fee4341114948898b.ctex"]
 
 [params]
 

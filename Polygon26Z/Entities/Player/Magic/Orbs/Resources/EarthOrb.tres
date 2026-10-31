@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="OrbData" format=3 uid="uid://uegn4vwj6k75"]
+
+[ext_resource type="PackedScene" uid="uid://b6bgjuelt8bng" path="res://Entities/Player/Magic/Spells/Terraform/EarthBlock.tscn" id="1_kpxiq"]
+[ext_resource type="Script" uid="uid://3uvwibrgbk7o" path="res://Entities/Player/Magic/Orbs/Scripts/OrbData.gd" id="2_j8muw"]
+[ext_resource type="Texture2D" uid="uid://cmsxxf4nl4son" path="res://Entities/Player/Magic/Orbs/Art/earth_orb.png" id="2_tf2hf"]
+
+[resource]
+script = ExtResource("2_j8muw")
+name = "Earth Orb"
+texture = ExtResource("2_tf2hf")
+effect1_scene = ExtResource("1_kpxiq")
+metadata/_custom_type_script = "uid://3uvwibrgbk7o"
