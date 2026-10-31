@@ -19,6 +19,7 @@ texture = ExtResource("2_v6g5f")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=2010636742]
 script = ExtResource("3_v6g5f")
+max_health = 12
 metadata/_custom_type_script = "uid://bdlqcd67yqw8a"
 
 [node name="MovementController" type="Node" parent="." unique_id=1522177853]

@@ -28,6 +28,7 @@ func _on_timer_timeout() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Creature:
 		bodies_inside.append(body)
+		apply_effects(body)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body in bodies_inside:
