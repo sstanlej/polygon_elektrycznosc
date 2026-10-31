@@ -9,8 +9,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ocryv"]
 radius = 12.0415945
 
-[node name="Enemy_test" type="CharacterBody2D" unique_id=391801368]
+[node name="Enemy_test" type="CharacterBody2D" unique_id=391801368 node_paths=PackedStringArray("health_bar", "health_component")]
 script = ExtResource("1_pq40t")
+health_bar = NodePath("HealthBar")
+health_component = NodePath("HealthComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094052858]
 texture = ExtResource("2_v6g5f")
@@ -29,3 +31,12 @@ shape = SubResource("CircleShape2D_ocryv")
 [node name="StatusEffectsComponent" type="Node" parent="." unique_id=688599582]
 script = ExtResource("5_6e2ki")
 metadata/_custom_type_script = "uid://xy7y1i3ihpty"
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=50529330]
+modulate = Color(0, 1, 0, 1)
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 16.0
+offset_bottom = -14.0
+value = 50.0
+show_percentage = false
