@@ -13,9 +13,16 @@
 [ext_resource type="Resource" uid="uid://uegn4vwj6k75" path="res://Entities/Magic/Orbs/Resources/EarthOrb.tres" id="11_ap3xn"]
 [ext_resource type="Script" uid="uid://xy7y1i3ihpty" path="res://Entities/Common/Scripts/StatusEffectsComponent.gd" id="12_iplt1"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iplt1"]
+radius = 7.0
+height = 18.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
-radius = 4.0
+radius = 3.0
 height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
+size = Vector2(14, 14)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iplt1"]
 animation = &"idle_left"
@@ -252,20 +259,33 @@ texture = ExtResource("2_owvpp")
 hframes = 4
 vframes = 18
 
+[node name="HitboxArea" type="Area2D" parent="." unique_id=1281615416]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea" unique_id=1353268774]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_iplt1")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
-position = Vector2(0, -4)
+position = Vector2(0, -2)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ocryv")
 
 [node name="MovementController" type="Node" parent="." unique_id=122565107]
 script = ExtResource("3_5c2io")
 
-[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight")]
+[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight", "highlight_area")]
 script = ExtResource("4_ap3xn")
 tile_highlight = NodePath("TileHighlight")
+highlight_area = NodePath("TileHighlight/Area2D")
 
 [node name="TileHighlight" type="Sprite2D" parent="MouseController" unique_id=859269639]
 position = Vector2(40, 6)
 texture = ExtResource("5_ap3xn")
+
+[node name="Area2D" type="Area2D" parent="MouseController/TileHighlight" unique_id=2076049258]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseController/TileHighlight/Area2D" unique_id=734919763]
+shape = SubResource("RectangleShape2D_ocryv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=357670655]
 script = ExtResource("4_tekja")

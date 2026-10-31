@@ -23,7 +23,7 @@ func _ready() -> void:
 	orb_generation_timer.wait_time = orb_generation_cooldown
 	if orbs_queue.size() <= slots_amount:
 		orb_generation_timer.start()
-	orb_cast_timer.wait_time = orb_cast_cooldown
+	orb_cast_timer.wait_time = orb_generation_cooldown # Not orb_cast_cooldown
 	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
 	effects_container = get_tree().get_first_node_in_group("EffectsContainer")
@@ -41,6 +41,9 @@ func pop_current_orb() -> OrbData:
 	var current_orb: OrbData = orbs_queue.pop_front()
 	set_slots()
 	return current_orb
+
+func get_current_orb() -> OrbData:
+	return orbs_queue[0]
 
 func build_slots(amount: int) -> void:
 	if slots_container and orb_slot:
@@ -71,15 +74,20 @@ func get_orbs_count() -> int:
 			count += 1
 	return count
 
-func on_spell1_clicked(pos: Vector2) -> void:
+func on_spell1_clicked(pos: Vector2, area: Area2D) -> void:
 	if not can_cast:
 		print("can't cast, on cooldown!")
 		return
-	can_cast = false
-	orb_cast_timer.start()
+	print(get_current_orb().effect1_scene)
 	var current_orb = pop_current_orb()
 	if not current_orb:
 		return
+	if area.get_overlapping_areas():
+		print("Spell is overlapping with:")
+		for overlap in area.get_overlapping_areas():
+			print(area)
+	can_cast = false
+	orb_cast_timer.start()
 	var effect_scene: PackedScene = current_orb.effect1_scene
 	if not effect_scene:
 		return
@@ -90,7 +98,7 @@ func on_spell1_clicked(pos: Vector2) -> void:
 	if orb_generation_timer.is_stopped():
 		orb_generation_timer.start()
 
-func on_spell2_clicked(_position: Vector2) -> void:
+func on_spell2_clicked(_position: Vector2, _area: Area2D) -> void:
 	print("Spell2 at ", position)
 
 func _on_orb_generation_timer_timeout() -> void:

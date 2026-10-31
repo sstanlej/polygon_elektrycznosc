@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b6bgjuelt8bng"]
 
-[ext_resource type="Script" uid="uid://c0w03pqyckry3" path="res://Entities/Magic/Spells/Ignite/EarthBlock.gd" id="1_dcukh"]
-[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Entities/Magic/Spells/Terraform/earth_tile.png" id="2_dcukh"]
+[ext_resource type="Script" uid="uid://c0w03pqyckry3" path="res://Entities/Magic/Spells/Terraform/EarthBlock.gd" id="1_q3hlk"]
+[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Entities/Magic/Spells/Terraform/earth_tile.png" id="2_osllx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
 
 [node name="EarthBlock" type="StaticBody2D" unique_id=1785654879 node_paths=PackedStringArray("progress_bar", "duration_timer")]
-script = ExtResource("1_dcukh")
+script = ExtResource("1_q3hlk")
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 15.0
@@ -20,7 +20,7 @@ one_shot = true
 shape = SubResource("RectangleShape2D_ocryv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
-texture = ExtResource("2_dcukh")
+texture = ExtResource("2_osllx")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
 offset_left = -8.0
