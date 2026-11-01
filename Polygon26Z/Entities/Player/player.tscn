@@ -21,9 +21,6 @@ height = 18.0
 radius = 3.0
 height = 10.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
-size = Vector2(14, 14)
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iplt1"]
 animation = &"idle_left"
 
@@ -274,19 +271,13 @@ shape = SubResource("CapsuleShape2D_ocryv")
 [node name="MovementController" type="Node" parent="." unique_id=122565107]
 script = ExtResource("3_5c2io")
 
-[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight", "highlight_area")]
+[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight")]
 script = ExtResource("4_ap3xn")
 tile_highlight = NodePath("TileHighlight")
-highlight_area = NodePath("TileHighlight/Area2D")
 
 [node name="TileHighlight" type="Sprite2D" parent="MouseController" unique_id=859269639]
 position = Vector2(40, 6)
 texture = ExtResource("5_ap3xn")
-
-[node name="Area2D" type="Area2D" parent="MouseController/TileHighlight" unique_id=2076049258]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseController/TileHighlight/Area2D" unique_id=734919763]
-shape = SubResource("RectangleShape2D_ocryv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=357670655]
 script = ExtResource("4_tekja")

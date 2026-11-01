@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w4g1ix42w2fk"]
 
 [ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_84ofj"]
-[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Magic/WorldEffects/FireArea/fire.png" id="2_gck3q"]
+[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Magic/WorldEffects/FireArea/fire.png" id="2_84ofj"]
 [ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Entities/Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_ubcx0"]
 [ext_resource type="Script" uid="uid://w5aktouosx6e" path="res://Entities/Magic/Effects/Effect.gd" id="4_bcam3"]
 [ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Magic/Effects/Burn/BurnEffect.gd" id="5_gyff1"]
@@ -15,6 +15,7 @@ size = Vector2(16, 16)
 
 [node name="FireArea" type="Node2D" unique_id=1120302221 node_paths=PackedStringArray("progress_bar", "duration_timer")]
 script = ExtResource("1_84ofj")
+effect_name = "Fire Area"
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 10.0
@@ -24,7 +25,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
-texture = ExtResource("2_gck3q")
+texture = ExtResource("2_84ofj")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
 offset_left = -8.0
