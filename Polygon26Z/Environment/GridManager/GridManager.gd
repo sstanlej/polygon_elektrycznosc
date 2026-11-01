@@ -26,6 +26,8 @@ func check_effects_mix(new_effect_scene: PackedScene, grid_coords: Vector2i) -> 
 	var current_effect: WorldEffect = active_effects.get(grid_coords)
 	var new_effect: WorldEffect = new_effect_scene.instantiate() as WorldEffect
 	print("Trying to place ", new_effect.effect_name, " on ", current_effect.effect_name)
+	if new_effect.effect_name == current_effect.effect_name:
+		print("They are the same!")
 	new_effect.queue_free()
 
 func on_world_effect_casted(effect_scene: PackedScene, grid_coords: Vector2i) -> void:

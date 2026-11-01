@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore_start("unused_signal")
 signal player_health_changed(current: int, max: int)
 signal player_died()
 signal spell1_clicked(grid_coords: Vector2i)
