@@ -82,26 +82,32 @@ func on_spell1_clicked(grid_coords: Vector2i) -> void:
 	if not check_cast_conditions(current_orb, grid_coords):
 		return
 		
-	pop_current_orb()
-	can_cast = false
-	orb_cast_timer.start()
+	var current_tile_effect = grid_manager.get_tile_effect(grid_coords)
+	if current_tile_effect:
+		var success = grid_manager.try_mix_effects(current_orb.effect1_scene, grid_coords)
+		if success:
+			consume_current_orb()
+		return
+	
+	consume_current_orb()
 	var effect_scene: PackedScene = current_orb.effect1_scene
 	if not effect_scene:
 		return
 	EventBus.world_effect_casted.emit(effect_scene, grid_coords)
+	#mouse_controller.set_current_orb_sprite(get_current_orb().texture)
+
+func consume_current_orb() -> void:
+	pop_current_orb()
+	can_cast = false
+	orb_cast_timer.start()
 	if orb_generation_timer.is_stopped():
 		orb_generation_timer.start()
-	#mouse_controller.set_current_orb_sprite(get_current_orb().texture)
 
 func check_cast_conditions(current_orb: OrbData, grid_coords: Vector2i) -> bool:
 	if not can_cast:
 		print("can't cast, on cooldown!")
 		return false
 	if not current_orb:
-		return false
-	var tile_effect = grid_manager.get_tile_effect(grid_coords)
-	if tile_effect:
-		grid_manager.check_effects_mix(current_orb.effect1_scene, grid_coords)
 		return false
 	if grid_manager.get_wall(grid_coords):
 		print("There is a wall here!")

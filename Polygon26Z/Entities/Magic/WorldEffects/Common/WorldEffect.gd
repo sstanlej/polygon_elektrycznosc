@@ -18,6 +18,9 @@ func _process(_delta: float) -> void:
 func set_grid_coords(new_grid_coords: Vector2i) -> void:
 	grid_coords = new_grid_coords
 
+func restart() -> void:
+	duration_timer.start()
+
 func _on_timer_timeout() -> void:
 	EventBus.world_effect_expired.emit(self, grid_coords)
 	queue_free()

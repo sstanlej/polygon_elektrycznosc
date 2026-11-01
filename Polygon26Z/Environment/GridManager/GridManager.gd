@@ -22,13 +22,18 @@ func get_wall(grid_coords: Vector2i) -> bool:
 func get_ground_tile(grid_coords: Vector2i):
 	return ground_layer.get_cell_tile_data(grid_coords)
 
-func check_effects_mix(new_effect_scene: PackedScene, grid_coords: Vector2i) -> void:
+func try_mix_effects(new_effect_scene: PackedScene, grid_coords: Vector2i) -> bool:
 	var current_effect: WorldEffect = active_effects.get(grid_coords)
 	var new_effect: WorldEffect = new_effect_scene.instantiate() as WorldEffect
 	print("Trying to place ", new_effect.effect_name, " on ", current_effect.effect_name)
 	if new_effect.effect_name == current_effect.effect_name:
-		print("They are the same!")
+		print("Refreshing original effect!")
+		current_effect.restart()
+		new_effect.queue_free()
+		return true
+	print("Mix failed")
 	new_effect.queue_free()
+	return false
 
 func on_world_effect_casted(effect_scene: PackedScene, grid_coords: Vector2i) -> void:
 	var effect_instance = effect_scene.instantiate() as WorldEffect
