@@ -251,6 +251,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=584494599 groups=["Player"]]
+z_index = 15
 script = ExtResource("1_lu8i8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476062981]
