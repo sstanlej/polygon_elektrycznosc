@@ -271,11 +271,12 @@ shape = SubResource("CapsuleShape2D_ocryv")
 [node name="MovementController" type="Node" parent="." unique_id=122565107]
 script = ExtResource("3_5c2io")
 
-[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight")]
+[node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight") groups=["MouseController"]]
 script = ExtResource("4_ap3xn")
 tile_highlight = NodePath("TileHighlight")
 
 [node name="TileHighlight" type="Sprite2D" parent="MouseController" unique_id=859269639]
+modulate = Color(1, 1, 1, 0.6156863)
 position = Vector2(40, 6)
 texture = ExtResource("5_ap3xn")
 

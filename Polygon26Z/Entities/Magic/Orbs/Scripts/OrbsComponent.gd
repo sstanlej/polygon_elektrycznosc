@@ -15,6 +15,7 @@ var orbs_queue: Array[OrbData]
 var can_cast: bool = true
 
 var grid_manager: GridManager
+var mouse_controller: MouseController
 
 func _ready() -> void:
 	build_slots(slots_amount)
@@ -26,6 +27,8 @@ func _ready() -> void:
 	orb_cast_timer.wait_time = orb_generation_cooldown # Not orb_cast_cooldown
 	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
+	mouse_controller = get_tree().get_first_node_in_group("MouseController")
+	#mouse_controller.set_current_orb_sprite(get_current_orb().texture)
 	grid_manager = get_tree().get_first_node_in_group("GridManager")
 
 func _process(_delta: float) -> void:
@@ -78,9 +81,14 @@ func on_spell1_clicked(grid_coords: Vector2i) -> void:
 	if not can_cast:
 		print("can't cast, on cooldown!")
 		return
-	if grid_manager.get_tile_effect(grid_coords):
-		print("Tile occupied!")
+	var tile_effect = grid_manager.get_tile_effect(grid_coords)
+	if tile_effect:
+		print("Tile occupied by ", tile_effect.effect_name, "!")
 		return
+	if grid_manager.get_wall(grid_coords):
+		print("There is a wall here!")
+		return
+	print(grid_manager.get_ground_tile(grid_coords))
 	var current_orb = pop_current_orb()
 	if not current_orb:
 		return
@@ -92,6 +100,7 @@ func on_spell1_clicked(grid_coords: Vector2i) -> void:
 	EventBus.world_effect_casted.emit(effect_scene, grid_coords)
 	if orb_generation_timer.is_stopped():
 		orb_generation_timer.start()
+	#mouse_controller.set_current_orb_sprite(get_current_orb().texture)
 
 func on_spell2_clicked(_grid_coords: Vector2i) -> void:
 	pass

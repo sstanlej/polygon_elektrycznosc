@@ -2,6 +2,7 @@ class_name GridManager extends Node
 
 @export var world_effects_container: Node
 @export var ground_layer: TileMapLayer
+@export var wall_layer: TileMapLayer
 var active_effects: Dictionary[Vector2i, WorldEffect]
 
 func _ready() -> void:
@@ -14,6 +15,12 @@ func _process(_delta: float) -> void:
 
 func get_tile_effect(grid_coords: Vector2i) -> WorldEffect:
 	return active_effects.get(grid_coords)
+
+func get_wall(grid_coords: Vector2i) -> bool:
+	return wall_layer.get_cell_source_id(grid_coords) != -1
+
+func get_ground_tile(grid_coords: Vector2i):
+	return ground_layer.get_cell_tile_data(grid_coords)
 
 func on_world_effect_casted(effect_scene: PackedScene, grid_coords: Vector2i) -> void:
 	var effect_instance = effect_scene.instantiate() as WorldEffect

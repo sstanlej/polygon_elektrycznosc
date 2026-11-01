@@ -1,7 +1,6 @@
-extends Node2D
+class_name MouseController extends Node2D
 
 @export var tile_highlight: Sprite2D
-var current_orb_sprite: Sprite2D
 var ground_layer: TileMapLayer
 var target_tile: Vector2i
 var target_tile_center: Vector2
@@ -15,6 +14,9 @@ func _process(_delta: float) -> void:
 		EventBus.spell1_clicked.emit(target_tile)
 	if Input.is_action_just_pressed("Spell2"):
 		EventBus.spell2_clicked.emit(target_tile)
+
+func set_current_orb_sprite(new_texture: Texture2D) -> void:
+	tile_highlight.texture = new_texture
 
 func update_target_tile() -> void:
 	var mouse_world: Vector2 = get_global_mouse_position()
