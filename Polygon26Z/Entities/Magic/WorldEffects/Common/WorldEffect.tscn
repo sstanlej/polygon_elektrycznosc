@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c5n1ivdxcerf6"]
+
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_g8uwr"]
+[ext_resource type="Texture2D" uid="uid://muhhnpcr67sv" path="res://Entities/Magic/WorldEffects/Common/template_effect.png" id="2_opbmo"]
+
+[node name="WorldEffect" type="Node2D" unique_id=789695149 node_paths=PackedStringArray("progress_bar", "duration_timer")]
+script = ExtResource("1_g8uwr")
+progress_bar = NodePath("ProgressBar")
+duration_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=940296712]
+wait_time = 5.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1818270925]
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 8.0
+offset_bottom = -9.0
+value = 50.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1777842762]
+texture = ExtResource("2_opbmo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

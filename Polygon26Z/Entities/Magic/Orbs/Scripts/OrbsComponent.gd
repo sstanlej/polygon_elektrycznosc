@@ -26,7 +26,7 @@ func _ready() -> void:
 	orb_cast_timer.wait_time = orb_generation_cooldown # Not orb_cast_cooldown
 	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
-	effects_container = get_tree().get_first_node_in_group("EffectsContainer")
+	effects_container = get_tree().get_first_node_in_group("WorldEffectsContainer")
 
 func _process(_delta: float) -> void:
 	orb_generation_bar.value = orb_generation_timer.time_left

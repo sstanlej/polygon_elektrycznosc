@@ -32,8 +32,8 @@ window/stretch/aspect="expand"
 
 Player=""
 GroundLayer=""
-EffectsContainer=""
 EnemiesContainer=""
+WorldEffectsContainer=""
 
 [input]
 
