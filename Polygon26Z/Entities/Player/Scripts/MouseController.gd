@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var tile_highlight: Sprite2D
+var current_orb_sprite: Sprite2D
 var ground_layer: TileMapLayer
 var target_tile: Vector2i
 var target_tile_center: Vector2
@@ -20,7 +21,3 @@ func update_target_tile() -> void:
 	target_tile= ground_layer.local_to_map(mouse_world)
 	target_tile_center = ground_layer.map_to_local(target_tile)
 	tile_highlight.global_position = target_tile_center
-
-#func _input(event) -> void:
-	#if event is InputEventMouseMotion:
-		#print("Mouse motion at: ", event.position)

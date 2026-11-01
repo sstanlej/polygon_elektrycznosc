@@ -14,6 +14,8 @@ var slots: Array[OrbSlot]
 var orbs_queue: Array[OrbData]
 var can_cast: bool = true
 
+var grid_manager: GridManager
+
 func _ready() -> void:
 	build_slots(slots_amount)
 	add_random_orbs(slots_amount+1)
@@ -24,6 +26,7 @@ func _ready() -> void:
 	orb_cast_timer.wait_time = orb_generation_cooldown # Not orb_cast_cooldown
 	EventBus.spell1_clicked.connect(on_spell1_clicked)
 	EventBus.spell2_clicked.connect(on_spell2_clicked)
+	grid_manager = get_tree().get_first_node_in_group("GridManager")
 
 func _process(_delta: float) -> void:
 	orb_generation_bar.value = orb_generation_timer.time_left
@@ -74,6 +77,9 @@ func get_orbs_count() -> int:
 func on_spell1_clicked(grid_coords: Vector2i) -> void:
 	if not can_cast:
 		print("can't cast, on cooldown!")
+		return
+	if grid_manager.get_tile_effect(grid_coords):
+		print("Tile occupied!")
 		return
 	var current_orb = pop_current_orb()
 	if not current_orb:
