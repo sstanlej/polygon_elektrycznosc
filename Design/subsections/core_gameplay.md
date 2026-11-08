@@ -3,9 +3,10 @@
 1. Start wave
 2. Enemies spawn, you have to cast spell combos to kill them
 3. Satisfying robot kills with combos
-5. Collect Junk and XP from dead robots
-6. Choose spell's stat upgrade after leveling
-7. Deliver Junk to beacon so they are saved after death
+4. Collect Junk and XP from dead robots
+5. Choose spell's stat upgrade after leveling
+6. Deliver Junk to altar so it is saved after death
+7. Open chests that contain advanced spells which were unlocked in research tree
 8. Die and unlock new spells with saved Junk
 
 ## 1.2. Controls

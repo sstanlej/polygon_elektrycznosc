@@ -9,23 +9,34 @@
     During gameplay, Junk is kept in the bag. If you die with collectibles in your bag you lose them. 
     In order to "save your Junk you need to deliver it to altar.
 
-## 1.1.1. Junk types
+## 1.2. Junk types
 
-### 1.1.1.1. Screws
+### 1.2.1. Screws
     Common rarity Junk. Used for unlocking basic spells.
 
-### 1.1.1.2. Bolts 
+### 1.2.2. Bolts 
     Rare Junk. Used for unlocking rare spells.
 
-### 1.1.1.3. Cores
+### 1.2.3. Cores
     The most rare type of Junk. Used for unlocking best spells.
 
-## 1.1.2. XP
+## 1.3. XP
     Player earns XP from killing robots. When he levels up, he can choose one of 4 spell upgrades, which enchances spells' stats.
 
+## 1.4. Chests
+    Chests spawn randomly on map. They contain already unlocked spells so player can equip them.
 
+    Player equip spells to one of his spell slots. Player has two slots per element so:
+    2 fire slots
+    2 earth slots
+    2 wind slots
+    2 water slots
 
-## 1.1.3. Reaserch Tree
+    
+
+    
+
+## 1.5. Reaserch Tree
     Example of research tree
 
 ![Research tree](../img/research_tree.png)
