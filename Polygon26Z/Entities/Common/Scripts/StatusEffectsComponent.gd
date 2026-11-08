@@ -23,3 +23,6 @@ func add_effect(new_effect: Effect) -> void:
 			return
 	effects.append(new_effect)
 	new_effect.on_apply(target)
+
+func get_active_effects() -> Array[Effect]:
+	return effects

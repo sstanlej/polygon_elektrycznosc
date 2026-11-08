@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BurnEffect" format=3 uid="uid://cn58yfbi3xcp"]
+
+[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Magic/Effects/Scripts/BurnEffect.gd" id="1_a0pnn"]
+
+[resource]
+script = ExtResource("1_a0pnn")
+name = "burn"
+metadata/_custom_type_script = "uid://bv5cmamllpnbf"
