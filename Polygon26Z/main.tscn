@@ -26,6 +26,8 @@ bg_color = Color(0.23546743, 0.0123059545, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
 bg_color = Color(0.4875837, 0, 0.008507375, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjong"]
+
 [node name="Main" type="Node2D" unique_id=360287245]
 
 [node name="GridManager" type="Node" parent="." unique_id=1187285640 node_paths=PackedStringArray("world_effects_container", "ground_layer", "wall_layer") groups=["GridManager"]]
@@ -100,6 +102,9 @@ vertical_alignment = 1
 
 [node name="Enemy_test" parent="EnemiesContainer" unique_id=391801368 instance=ExtResource("5_lquwl")]
 position = Vector2(453, 321)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemiesContainer/Enemy_test" unique_id=2053405365]
+shape = SubResource("CircleShape2D_xjong")
 
 [node name="Enemy_test2" parent="EnemiesContainer" unique_id=224393946 instance=ExtResource("5_lquwl")]
 position = Vector2(196, 319)
