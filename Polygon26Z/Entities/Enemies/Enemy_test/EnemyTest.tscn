@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://bdlqcd67yqw8a" path="res://Entities/Player/Scripts/HealthComponent.gd" id="3_v6g5f"]
 [ext_resource type="Script" uid="uid://xy7y1i3ihpty" path="res://Entities/Common/Scripts/StatusEffectsComponent.gd" id="5_6e2ki"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ocryv"]
-radius = 12.0415945
+[sub_resource type="CircleShape2D" id="CircleShape2D_6e2ki"]
 
 [node name="Enemy_test" type="CharacterBody2D" unique_id=391801368 node_paths=PackedStringArray("health_bar", "health_component")]
 script = ExtResource("1_pq40t")
@@ -26,9 +25,6 @@ metadata/_custom_type_script = "uid://bdlqcd67yqw8a"
 script = ExtResource("3_6e2ki")
 movement_speed = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1163663277]
-shape = SubResource("CircleShape2D_ocryv")
-
 [node name="StatusEffectsComponent" type="Node" parent="." unique_id=688599582]
 script = ExtResource("5_6e2ki")
 metadata/_custom_type_script = "uid://xy7y1i3ihpty"
@@ -41,3 +37,8 @@ offset_right = 16.0
 offset_bottom = -14.0
 value = 50.0
 show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1621643199]
+shape = SubResource("CircleShape2D_6e2ki")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=751255406]
