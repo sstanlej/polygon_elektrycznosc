@@ -9,8 +9,8 @@ var target: Creature
 func on_apply(target_creature: Creature) -> void:
 	if target_creature:
 		var current_effects = target_creature.get_active_effects()
+		print("Applying ", self.name, " effect to ", target_creature)
 		for effect in current_effects:
-			print(effect.name)
 			if effect.name in override_effects:
 				print(self.name, " should override ", effect.name)
 	time_left = duration

@@ -15,7 +15,7 @@ func on_apply(target_creature: Creature) -> void:
 	target_sprite.modulate.r = modulate_r
 	target_sprite.modulate.g = modulate_g
 	target_sprite.modulate.b = modulate_b
-	super.on_apply(target)
+	super.on_apply(target_creature)
 
 func on_tick(delta: float, _target_creature: Creature) -> void:
 	hurt_time_left -= delta
