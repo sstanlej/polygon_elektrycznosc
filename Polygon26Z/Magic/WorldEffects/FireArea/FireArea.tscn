@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://w4g1ix42w2fk"]
 
-[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_84ofj"]
-[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Magic/WorldEffects/FireArea/fire.png" id="2_84ofj"]
-[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_ubcx0"]
-[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/Effects/Common/EffectData.gd" id="4_84ofj"]
-[ext_resource type="Resource" uid="uid://cn58yfbi3xcp" path="res://Magic/Effects/Resources/BurnEffect.tres" id="5_gck3q"]
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_axt44"]
+[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Magic/WorldEffects/FireArea/fire.png" id="2_aksbv"]
+[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_tryf3"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/StatusEffects/Common/EffectData.gd" id="4_v7xnh"]
+[ext_resource type="Resource" uid="uid://cn58yfbi3xcp" path="res://Magic/StatusEffects/Resources/BurnEffect.tres" id="5_43xdy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
 
 [node name="FireArea" type="Node2D" unique_id=1120302221 node_paths=PackedStringArray("progress_bar", "duration_timer")]
-script = ExtResource("1_84ofj")
+script = ExtResource("1_axt44")
 effect_name = "Fire Area"
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
@@ -21,7 +21,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
-texture = ExtResource("2_84ofj")
+texture = ExtResource("2_aksbv")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
 z_index = 100
@@ -33,8 +33,8 @@ value = 50.0
 show_percentage = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=834972383]
-script = ExtResource("3_ubcx0")
-effects = Array[ExtResource("4_84ofj")]([ExtResource("5_gck3q")])
+script = ExtResource("3_tryf3")
+effects = Array[ExtResource("4_v7xnh")]([ExtResource("5_43xdy")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=886863528]
 shape = SubResource("RectangleShape2D_ocryv")
