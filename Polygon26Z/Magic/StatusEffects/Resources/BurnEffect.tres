@@ -1,19 +1,20 @@
 [gd_resource type="Resource" script_class="EffectData" format=3 uid="uid://cn58yfbi3xcp"]
 
-[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Magic/StatusEffects/Behaviors/EffectBehavior.gd" id="1_73bs1"]
-[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Magic/StatusEffects/Behaviors/PeriodicHealthBehavior.gd" id="2_j1ts2"]
-[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/StatusEffects/Common/EffectData.gd" id="2_sm8gr"]
+[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Magic/StatusEffects/Behaviors/EffectBehavior.gd" id="1_ypnav"]
+[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Magic/StatusEffects/Behaviors/PeriodicHealthBehavior.gd" id="2_yqnlh"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/StatusEffects/Common/EffectData.gd" id="3_6orl6"]
 
 [sub_resource type="Resource" id="Resource_j1ts2"]
-script = ExtResource("2_j1ts2")
+script = ExtResource("2_yqnlh")
 trigger_on_apply = false
 metadata/_custom_type_script = "uid://bevpwc1vaxs2j"
 
 [resource]
-script = ExtResource("2_sm8gr")
+script = ExtResource("3_6orl6")
 id = "burn"
 has_tint = true
 tint_color = Color(0.857194, 0.36479104, 0.06822927, 1)
 tags = Array[String](["fire"])
-behaviors = Array[ExtResource("1_73bs1")]([SubResource("Resource_j1ts2")])
+removes_tags = Array[String](["water"])
+behaviors = Array[ExtResource("1_ypnav")]([SubResource("Resource_j1ts2")])
 metadata/_custom_type_script = "uid://btvt3hytq727s"
