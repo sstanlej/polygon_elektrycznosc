@@ -17,6 +17,15 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 
+func heal(amount: int) -> void:
+	if health >= max_health:
+		return
+	if health + amount >= max_health:
+		health = max_health
+	else:
+		health += amount
+	health_changed.emit(health, max_health)
+
 func die() -> void:
 	body.queue_free()
 

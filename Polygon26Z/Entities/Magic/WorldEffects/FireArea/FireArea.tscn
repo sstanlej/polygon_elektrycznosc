@@ -3,13 +3,8 @@
 [ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_84ofj"]
 [ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Magic/WorldEffects/FireArea/fire.png" id="2_84ofj"]
 [ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Entities/Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_ubcx0"]
-[ext_resource type="Script" uid="uid://w5aktouosx6e" path="res://Entities/Magic/Effects/Scripts/Effect.gd" id="4_bcam3"]
-[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Magic/Effects/Scripts/BurnEffect.gd" id="5_gyff1"]
-
-[sub_resource type="Resource" id="Resource_1k054"]
-script = ExtResource("5_gyff1")
-name = "burn"
-metadata/_custom_type_script = "uid://bv5cmamllpnbf"
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Entities/Magic/Effects/Common/EffectData.gd" id="4_84ofj"]
+[ext_resource type="Resource" uid="uid://cn58yfbi3xcp" path="res://Entities/Magic/Effects/Resources/BurnEffect.tres" id="5_gck3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
@@ -39,7 +34,7 @@ show_percentage = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=834972383]
 script = ExtResource("3_ubcx0")
-effects = Array[ExtResource("4_bcam3")]([SubResource("Resource_1k054")])
+effects = Array[ExtResource("4_84ofj")]([ExtResource("5_gck3q")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=886863528]
 shape = SubResource("RectangleShape2D_ocryv")

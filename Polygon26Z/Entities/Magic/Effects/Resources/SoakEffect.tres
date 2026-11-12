@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EffectData" format=3 uid="uid://c1efuo8ndggj4"]
+
+[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Entities/Magic/Effects/Common/EffectBehavior.gd" id="1_qcnva"]
+[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Entities/Magic/Effects/Common/PeriodicHealthBehavior.gd" id="2_4dqiw"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Entities/Magic/Effects/Common/EffectData.gd" id="3_oqpdi"]
+
+[sub_resource type="Resource" id="Resource_j1ts2"]
+script = ExtResource("2_4dqiw")
+interval = 2.0
+trigger_on_apply = false
+target_filter = 2
+metadata/_custom_type_script = "uid://bevpwc1vaxs2j"
+
+[sub_resource type="Resource" id="Resource_gic10"]
+script = ExtResource("2_4dqiw")
+amount = 1
+interval = 2.0
+trigger_on_apply = false
+target_filter = 1
+metadata/_custom_type_script = "uid://bevpwc1vaxs2j"
+
+[resource]
+script = ExtResource("3_oqpdi")
+id = "soak"
+has_tint = true
+tint_color = Color(0.17573223, 0.5798994, 0.75283813, 1)
+tags = Array[String](["water"])
+removes_tags = Array[String](["fire"])
+behaviors = Array[ExtResource("1_qcnva")]([SubResource("Resource_j1ts2"), SubResource("Resource_gic10")])
+metadata/_custom_type_script = "uid://btvt3hytq727s"

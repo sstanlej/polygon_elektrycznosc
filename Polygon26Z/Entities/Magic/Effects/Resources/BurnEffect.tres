@@ -1,8 +1,19 @@
-[gd_resource type="Resource" script_class="BurnEffect" format=3 uid="uid://cn58yfbi3xcp"]
+[gd_resource type="Resource" script_class="EffectData" format=3 uid="uid://cn58yfbi3xcp"]
 
-[ext_resource type="Script" uid="uid://bv5cmamllpnbf" path="res://Entities/Magic/Effects/Scripts/BurnEffect.gd" id="1_a0pnn"]
+[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Entities/Magic/Effects/Common/EffectBehavior.gd" id="1_73bs1"]
+[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Entities/Magic/Effects/Common/PeriodicHealthBehavior.gd" id="2_j1ts2"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Entities/Magic/Effects/Common/EffectData.gd" id="2_sm8gr"]
+
+[sub_resource type="Resource" id="Resource_j1ts2"]
+script = ExtResource("2_j1ts2")
+trigger_on_apply = false
+metadata/_custom_type_script = "uid://bevpwc1vaxs2j"
 
 [resource]
-script = ExtResource("1_a0pnn")
-name = "burn"
-metadata/_custom_type_script = "uid://bv5cmamllpnbf"
+script = ExtResource("2_sm8gr")
+id = "burn"
+has_tint = true
+tint_color = Color(0.857194, 0.36479104, 0.06822927, 1)
+tags = Array[String](["fire"])
+behaviors = Array[ExtResource("1_73bs1")]([SubResource("Resource_j1ts2")])
+metadata/_custom_type_script = "uid://btvt3hytq727s"

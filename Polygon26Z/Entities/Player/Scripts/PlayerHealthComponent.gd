@@ -10,6 +10,10 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 
+func heal(amount: int) -> void:
+	super.heal(amount)
+	EventBus.player_health_changed.emit(health, max_health)
+
 func die() -> void:
 	EventBus.player_died.emit()
 	super.die()
