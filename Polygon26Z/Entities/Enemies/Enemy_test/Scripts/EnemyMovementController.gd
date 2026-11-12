@@ -1,8 +1,9 @@
 class_name EnemyMovementController extends Node
 
-@export var movement_speed: float = 50.0
+@export var base_movement_speed: float = 50.0
 @onready var body: CharacterBody2D = get_parent()
 @onready var navigation_agent: NavigationAgent2D = body.get_node_or_null("NavigationAgent2D")
+@onready var effects_component: StatusEffectsComponent = body.get_node_or_null("StatusEffectsComponent")
 
 var player: Player
 
@@ -24,6 +25,10 @@ func _physics_process(delta: float) -> void:
 		return
 
 	navigation_agent.target_position = player.global_position
+
+	var movement_speed: float = base_movement_speed
+	if effects_component:
+		movement_speed *= effects_component.get_stat_multiplier(StatusEffectsComponent.StatType.MOVEMENT_SPEED)
 
 	if navigation_agent.is_navigation_finished():
 		body.velocity = body.velocity.move_toward(Vector2.ZERO, movement_speed * 10.0 * delta)

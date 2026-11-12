@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EffectData" format=3 uid="uid://cn58yfbi3xcp"]
 
-[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Magic/StatusEffects/Common/EffectBehavior.gd" id="1_73bs1"]
-[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Magic/StatusEffects/Common/PeriodicHealthBehavior.gd" id="2_j1ts2"]
+[ext_resource type="Script" uid="uid://dtgylfp0ifu68" path="res://Magic/StatusEffects/Behaviors/EffectBehavior.gd" id="1_73bs1"]
+[ext_resource type="Script" uid="uid://bevpwc1vaxs2j" path="res://Magic/StatusEffects/Behaviors/PeriodicHealthBehavior.gd" id="2_j1ts2"]
 [ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/StatusEffects/Common/EffectData.gd" id="2_sm8gr"]
 
 [sub_resource type="Resource" id="Resource_j1ts2"]

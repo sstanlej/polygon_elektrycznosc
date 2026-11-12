@@ -23,7 +23,6 @@ metadata/_custom_type_script = "uid://bdlqcd67yqw8a"
 
 [node name="MovementController" type="Node" parent="." unique_id=1522177853]
 script = ExtResource("3_6e2ki")
-movement_speed = 10.0
 
 [node name="StatusEffectsComponent" type="Node" parent="." unique_id=688599582]
 script = ExtResource("5_6e2ki")

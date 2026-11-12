@@ -1,8 +1,12 @@
 class_name StatusEffectsComponent extends Node
 
+enum StatType{MOVEMENT_SPEED, ORB_COOLDOWN}
+
 var active_effects: Array[ActiveEffect] = []
 var target: Creature
 var target_sprite: Sprite2D
+
+var active_stats_multipliers: Dictionary[StatType, float]
 
 func _ready() -> void:
 	target = get_parent() as Creature
@@ -52,6 +56,25 @@ func add_effect(effect_data: EffectData) -> void:
 	active_effects.append(new_effect_instance)
 	new_effect_instance.apply(target)
 	_update_visual_tint()
+		
+func add_stat_multiplier(stat_type: StatType, value: float) -> void:
+
+	var current_multiplier: float = active_stats_multipliers.get(stat_type, 1)
+	active_stats_multipliers.set(stat_type, current_multiplier * value)
+	print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
+
+func remove_stat_multiplier(stat_type: StatType, value: float) -> void:
+	var current_multiplier: float = active_stats_multipliers.get(stat_type)
+	if value == 0:
+		# this should be later changed because we don't know what the stat multiplier was before it was multiplied by zero
+		active_stats_multipliers.set(stat_type, 1)
+		print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
+		return
+	active_stats_multipliers.set(stat_type, current_multiplier / value)
+	print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
+
+func get_stat_multiplier(stat_type: StatType) -> float:
+	return active_stats_multipliers.get(stat_type, 1)
 
 func _has_matching_tag(effect_tags: Array[String], tags_to_remove: Array[String]) -> bool:
 	for tag in effect_tags:
