@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmsxxf4nl4son"
-path="res://.godot/imported/earth_orb.png-1c54fcc1b697fa6495fecbbf6d95e112.ctex"
+uid="uid://muhhnpcr67sv"
+path="res://.godot/imported/template_effect.png-28eb47fc6f55038a68f12189706836a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Magic/Orbs/Art/earth_orb.png"
-dest_files=["res://.godot/imported/earth_orb.png-1c54fcc1b697fa6495fecbbf6d95e112.ctex"]
+source_file="res://Magic/WorldEffects/Common/template_effect.png"
+dest_files=["res://.godot/imported/template_effect.png-28eb47fc6f55038a68f12189706836a5.ctex"]
 
 [params]
 

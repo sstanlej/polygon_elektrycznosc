@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://um7d1080nnvm"
-path="res://.godot/imported/empty_orb_slot.png-43a7274b890d8f90855828e3e5962629.ctex"
+uid="uid://dagc1poiw853a"
+path="res://.godot/imported/earth_tile.png-a223f47235ba249fefdf3705a298b0bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Magic/Orbs/Art/empty_orb_slot.png"
-dest_files=["res://.godot/imported/empty_orb_slot.png-43a7274b890d8f90855828e3e5962629.ctex"]
+source_file="res://Magic/WorldEffects/EarthBlock/earth_tile.png"
+dest_files=["res://.godot/imported/earth_tile.png-a223f47235ba249fefdf3705a298b0bd.ctex"]
 
 [params]
 

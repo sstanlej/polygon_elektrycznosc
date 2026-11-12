@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlubna6glq0c3"
-path="res://.godot/imported/fire_orb.png-2854b294a3643c58ecbe238e22a2caec.ctex"
+path="res://.godot/imported/fire_orb.png-beefa97be9202694c1c13947e8f324d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Magic/Orbs/Art/fire_orb.png"
-dest_files=["res://.godot/imported/fire_orb.png-2854b294a3643c58ecbe238e22a2caec.ctex"]
+source_file="res://Magic/Orbs/Art/fire_orb.png"
+dest_files=["res://.godot/imported/fire_orb.png-beefa97be9202694c1c13947e8f324d5.ctex"]
 
 [params]
 

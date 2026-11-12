@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://w4g1ix42w2fk"]
 
-[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_84ofj"]
-[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Entities/Magic/WorldEffects/FireArea/fire.png" id="2_84ofj"]
-[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Entities/Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_ubcx0"]
-[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Entities/Magic/Effects/Common/EffectData.gd" id="4_84ofj"]
-[ext_resource type="Resource" uid="uid://cn58yfbi3xcp" path="res://Entities/Magic/Effects/Resources/BurnEffect.tres" id="5_gck3q"]
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_84ofj"]
+[ext_resource type="Texture2D" uid="uid://dbdsfcr1qq3m2" path="res://Magic/WorldEffects/FireArea/fire.png" id="2_84ofj"]
+[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_ubcx0"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/Effects/Common/EffectData.gd" id="4_84ofj"]
+[ext_resource type="Resource" uid="uid://cn58yfbi3xcp" path="res://Magic/Effects/Resources/BurnEffect.tres" id="5_gck3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)

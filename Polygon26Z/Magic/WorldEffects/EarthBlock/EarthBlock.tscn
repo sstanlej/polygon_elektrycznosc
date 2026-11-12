@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6bgjuelt8bng"]
 
-[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_hqint"]
-[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Entities/Magic/WorldEffects/EarthBlock/earth_tile.png" id="2_hqint"]
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_hqint"]
+[ext_resource type="Texture2D" uid="uid://dagc1poiw853a" path="res://Magic/WorldEffects/EarthBlock/earth_tile.png" id="2_hqint"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)

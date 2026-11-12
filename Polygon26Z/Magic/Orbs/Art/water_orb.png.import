@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dagc1poiw853a"
-path="res://.godot/imported/earth_tile.png-b4a0e1df82a4e788fd3fe1e1759ff3a8.ctex"
+uid="uid://cs54rf4xyauom"
+path="res://.godot/imported/water_orb.png-cd57de62db46b095299b9ed0e8c5ef83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Magic/WorldEffects/EarthBlock/earth_tile.png"
-dest_files=["res://.godot/imported/earth_tile.png-b4a0e1df82a4e788fd3fe1e1759ff3a8.ctex"]
+source_file="res://Magic/Orbs/Art/water_orb.png"
+dest_files=["res://.godot/imported/water_orb.png-cd57de62db46b095299b9ed0e8c5ef83.ctex"]
 
 [params]
 

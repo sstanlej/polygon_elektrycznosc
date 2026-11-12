@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5n1ivdxcerf6"]
 
-[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_g8uwr"]
-[ext_resource type="Texture2D" uid="uid://muhhnpcr67sv" path="res://Entities/Magic/WorldEffects/Common/template_effect.png" id="2_opbmo"]
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_g8uwr"]
+[ext_resource type="Texture2D" uid="uid://muhhnpcr67sv" path="res://Magic/WorldEffects/Common/template_effect.png" id="2_opbmo"]
 
 [node name="WorldEffect" type="Node2D" unique_id=789695149 node_paths=PackedStringArray("progress_bar", "duration_timer")]
 script = ExtResource("1_g8uwr")

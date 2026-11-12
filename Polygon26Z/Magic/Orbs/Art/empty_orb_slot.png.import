@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs54rf4xyauom"
-path="res://.godot/imported/water_orb.png-5b019dd815bf849a4fe2e22c93a08861.ctex"
+uid="uid://um7d1080nnvm"
+path="res://.godot/imported/empty_orb_slot.png-c9b04c62be87d64eaff30d869d248893.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Magic/Orbs/Art/water_orb.png"
-dest_files=["res://.godot/imported/water_orb.png-5b019dd815bf849a4fe2e22c93a08861.ctex"]
+source_file="res://Magic/Orbs/Art/empty_orb_slot.png"
+dest_files=["res://.godot/imported/empty_orb_slot.png-c9b04c62be87d64eaff30d869d248893.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://k2hdid4ew8ev"]
 
-[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Entities/Magic/WorldEffects/Common/WorldEffect.gd" id="1_0c5tv"]
-[ext_resource type="Texture2D" uid="uid://ca3fluta4qmu5" path="res://Entities/Magic/WorldEffects/WaterArea/water_tile.png" id="2_1hqsg"]
-[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Entities/Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_r3dvi"]
-[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Entities/Magic/Effects/Common/EffectData.gd" id="4_1hqsg"]
-[ext_resource type="Resource" uid="uid://c1efuo8ndggj4" path="res://Entities/Magic/Effects/Resources/SoakEffect.tres" id="5_pu8ei"]
+[ext_resource type="Script" uid="uid://1psvn2m7nkoh" path="res://Magic/WorldEffects/Common/WorldEffect.gd" id="1_0c5tv"]
+[ext_resource type="Texture2D" uid="uid://ca3fluta4qmu5" path="res://Magic/WorldEffects/WaterArea/water_tile.png" id="2_1hqsg"]
+[ext_resource type="Script" uid="uid://bnw7xuapbuuwd" path="res://Magic/WorldEffects/Common/StatusEffectArea.gd" id="3_r3dvi"]
+[ext_resource type="Script" uid="uid://btvt3hytq727s" path="res://Magic/Effects/Common/EffectData.gd" id="4_1hqsg"]
+[ext_resource type="Resource" uid="uid://c1efuo8ndggj4" path="res://Magic/Effects/Resources/SoakEffect.tres" id="5_pu8ei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocryv"]
 size = Vector2(16, 16)
