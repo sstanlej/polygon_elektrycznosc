@@ -11,8 +11,8 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 	if navigation_agent:
-		navigation_agent.path_desired_distance = 4.0
-		navigation_agent.target_desired_distance = 4.0
+		navigation_agent.path_desired_distance = 24.0
+		navigation_agent.target_desired_distance = 24.0
 		await get_tree().physics_frame
 		update_target_position()
 

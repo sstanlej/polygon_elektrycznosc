@@ -21,6 +21,8 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105459908]
+texture_filter = 1
+scale = Vector2(6, 6)
 texture = ExtResource("2_lqchp")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=791356325]
@@ -37,6 +39,7 @@ script = ExtResource("3_ebeov")
 effects = Array[ExtResource("4_p7sky")]([ExtResource("5_x2fkt")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=886863528]
+scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ocryv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
