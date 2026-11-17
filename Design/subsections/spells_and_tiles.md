@@ -52,7 +52,7 @@ Every tile has its duration time, after which it disappears. Tiles can also disa
 
 ## 2.4. Air Spells DRAFT
 ### 2.4.1. Basic spell - "Blowback"
-    Knockbacks target one tile away from player.
+    Knockbacks target one tile away from player. Gives target Whiff effect.
 ### 2.4.2. Advanced spell - "Tornado"
     Sucks enemies in and creates wind tiles.
 ### 2.4.3. Advanced spell - "Cloud"
