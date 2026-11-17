@@ -1,11 +1,9 @@
-class_name EnemyMovementController extends Node
+class_name EnemyMovementController extends BaseMovementController
 
-@export var base_movement_speed: float = 50.0
-@onready var body: CharacterBody2D = get_parent()
 @onready var navigation_agent: NavigationAgent2D = body.get_node_or_null("NavigationAgent2D")
-@onready var effects_component: StatusEffectsComponent = body.get_node_or_null("StatusEffectsComponent")
 
 var player: Player
+var internal_velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -25,21 +23,18 @@ func _physics_process(delta: float) -> void:
 		return
 
 	navigation_agent.target_position = player.global_position
-
-	var movement_speed: float = base_movement_speed
-	if effects_component:
-		movement_speed *= effects_component.get_stat_multiplier(StatusEffectsComponent.StatType.MOVEMENT_SPEED)
+	var movement_speed: float = get_current_speed()
 
 	if navigation_agent.is_navigation_finished():
-		body.velocity = body.velocity.move_toward(Vector2.ZERO, movement_speed * 10.0 * delta)
-		body.move_and_slide()
-		return
+		internal_velocity = internal_velocity.move_toward(Vector2.ZERO, movement_speed * 10.0 * delta)
+	else:
+		var current_agent_position: Vector2 = body.global_position
+		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+		var direction: Vector2 = (next_path_position - current_agent_position).normalized()
+		var target_velocity: Vector2 = direction * movement_speed
+		internal_velocity = internal_velocity.lerp(target_velocity, 15.0 * delta)
 
-	var current_agent_position: Vector2 = body.global_position
-	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-
-	var direction = (next_path_position - current_agent_position).normalized()
-	var target_velocity = direction * movement_speed
-
-	body.velocity = body.velocity.lerp(target_velocity, 15.0 * delta)
+	body.velocity = internal_velocity + external_velocity
 	body.move_and_slide()
+	
+	super(delta)

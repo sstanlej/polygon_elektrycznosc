@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctop3rw10dgxi" path="res://Entities/Player/Scripts/Player.gd" id="1_lu8i8"]
 [ext_resource type="Texture2D" uid="uid://dmk562jtgy8q4" path="res://Entities/Player/Art/Wizard_color.png" id="2_owvpp"]
-[ext_resource type="Script" uid="uid://cdca4rkv6pgxh" path="res://Entities/Player/Scripts/MovementController.gd" id="3_5c2io"]
+[ext_resource type="Script" uid="uid://mpdyh0sb2wvv" path="res://Entities/Player/Scripts/PlayerMovementController.gd" id="3_owvpp"]
 [ext_resource type="Script" uid="uid://d2pxjhebwons2" path="res://Entities/Player/Scripts/MouseController.gd" id="4_ap3xn"]
 [ext_resource type="Script" uid="uid://dfbb4k1tmt3dw" path="res://Entities/Player/Scripts/PlayerHealthComponent.gd" id="4_tekja"]
 [ext_resource type="Script" uid="uid://g0iafj666kp1" path="res://Entities/Player/Scripts/OrbsComponent.gd" id="5_5c2io"]
@@ -99,7 +99,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ocryv")
 
 [node name="MovementController" type="Node" parent="." unique_id=122565107]
-script = ExtResource("3_5c2io")
+script = ExtResource("3_owvpp")
 
 [node name="MouseController" type="Node2D" parent="." unique_id=2117648176 node_paths=PackedStringArray("tile_highlight") groups=["MouseController"]]
 script = ExtResource("4_ap3xn")
