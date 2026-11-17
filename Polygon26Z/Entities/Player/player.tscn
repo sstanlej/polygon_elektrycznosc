@@ -20,7 +20,7 @@ height = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
 radius = 21.0
-height = 88.0
+height = 72.0
 
 [sub_resource type="Animation" id="Animation_owvpp"]
 resource_name = "Idle"
@@ -82,6 +82,7 @@ z_index = 15
 script = ExtResource("1_lu8i8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476062981]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_owvpp")
 hframes = 4
 vframes = 2
@@ -94,7 +95,7 @@ position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_iplt1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
-position = Vector2(2, 79)
+position = Vector2(2, 62)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ocryv")
 
