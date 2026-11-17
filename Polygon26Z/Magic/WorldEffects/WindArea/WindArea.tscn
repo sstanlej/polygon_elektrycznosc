@@ -34,6 +34,7 @@ show_percentage = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=834972383]
 script = ExtResource("3_oty7k")
+launch_force = 1500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=886863528]
 scale = Vector2(6, 6)

@@ -61,17 +61,14 @@ func add_stat_multiplier(stat_type: StatType, value: float) -> void:
 
 	var current_multiplier: float = active_stats_multipliers.get(stat_type, 1)
 	active_stats_multipliers.set(stat_type, current_multiplier * value)
-	print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
 
 func remove_stat_multiplier(stat_type: StatType, value: float) -> void:
 	var current_multiplier: float = active_stats_multipliers.get(stat_type)
 	if value == 0:
 		# this should be later changed because we don't know what the stat multiplier was before it was multiplied by zero
 		active_stats_multipliers.set(stat_type, 1)
-		print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
 		return
 	active_stats_multipliers.set(stat_type, current_multiplier / value)
-	print(target, "'s ", stat_type, " is now ", active_stats_multipliers.get(stat_type, 1))
 
 func get_stat_multiplier(stat_type: StatType) -> float:
 	return active_stats_multipliers.get(stat_type, 1)
