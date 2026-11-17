@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://uegn4vwj6k75" path="res://Magic/Orbs/Resources/EarthOrb.tres" id="11_ap3xn"]
 [ext_resource type="Script" uid="uid://xy7y1i3ihpty" path="res://Entities/Common/Scripts/StatusEffectsComponent.gd" id="12_iplt1"]
 [ext_resource type="Resource" uid="uid://doapamk5hddgg" path="res://Magic/Orbs/Resources/WaterOrb.tres" id="12_owvpp"]
+[ext_resource type="Resource" uid="uid://cpj4ltfyc3i4k" path="res://Magic/Orbs/Resources/AirOrb.tres" id="13_xr8lj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iplt1"]
 radius = 7.0
@@ -121,7 +122,7 @@ position = Vector2(-1, -172)
 script = ExtResource("5_5c2io")
 slots_container = NodePath("SlotsContainer")
 orb_slot = ExtResource("8_ap3xn")
-available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02"), ExtResource("11_ap3xn"), ExtResource("12_owvpp")])
+available_orbs = Array[ExtResource("7_7a1se")]([ExtResource("8_lub02"), ExtResource("11_ap3xn"), ExtResource("12_owvpp"), ExtResource("13_xr8lj")])
 orb_generation_cooldown = 1.0
 orb_generation_timer = NodePath("OrbGenerationTimer")
 orb_generation_bar = NodePath("SlotsContainer/OrbGenerationBar")
