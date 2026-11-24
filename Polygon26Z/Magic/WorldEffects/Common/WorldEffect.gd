@@ -4,6 +4,7 @@ class_name WorldEffect extends Node2D
 @export var progress_bar: ProgressBar
 @export var duration_timer: Timer
 @export var duration: float = 5
+@export var blocks_movement: bool = false
 
 var grid_coords: Vector2i = Vector2i.ZERO
 

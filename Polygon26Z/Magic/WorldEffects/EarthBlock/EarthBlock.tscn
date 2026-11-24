@@ -12,6 +12,7 @@ effect_name = "Earth Block"
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 10.0
+blocks_movement = true
 metadata/_custom_type_script = "uid://1psvn2m7nkoh"
 
 [node name="Timer" type="Timer" parent="." unique_id=2042611514]
