@@ -15,7 +15,6 @@ effect_name = "Fire Area"
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
 duration = 10.0
-blocks_movement = true
 
 [node name="Timer" type="Timer" parent="." unique_id=2042611514]
 wait_time = 5.0
