@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileSpawnSpellData" format=3 uid="uid://dhtvuncq5581r"]
+
+[ext_resource type="Script" uid="uid://cioouoi3uxhrf" path="res://Magic/Spells/Common/TileSpawnSpellData.gd" id="1_tvrfy"]
+[ext_resource type="PackedScene" uid="uid://w4g1ix42w2fk" path="res://Magic/WorldEffects/FireArea/FireArea.tscn" id="2_bakk8"]
+
+[resource]
+script = ExtResource("1_tvrfy")
+world_effect_scene = ExtResource("2_bakk8")
+spell_name = "Ignite"
+metadata/_custom_type_script = "uid://cioouoi3uxhrf"

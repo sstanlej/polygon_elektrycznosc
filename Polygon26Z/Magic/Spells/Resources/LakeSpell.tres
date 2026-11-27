@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileSpawnSpellData" format=3 uid="uid://ln5ppodid2jg"]
+
+[ext_resource type="Script" uid="uid://cioouoi3uxhrf" path="res://Magic/Spells/Common/TileSpawnSpellData.gd" id="1_i5djb"]
+[ext_resource type="PackedScene" uid="uid://k2hdid4ew8ev" path="res://Magic/WorldEffects/WaterArea/WaterArea.tscn" id="2_creyq"]
+
+[resource]
+script = ExtResource("1_i5djb")
+world_effect_scene = ExtResource("2_creyq")
+spell_name = "Lake"
+metadata/_custom_type_script = "uid://cioouoi3uxhrf"

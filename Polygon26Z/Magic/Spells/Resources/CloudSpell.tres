@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileSpawnSpellData" format=3 uid="uid://c3t4vvy2edp2u"]
+
+[ext_resource type="Script" uid="uid://cioouoi3uxhrf" path="res://Magic/Spells/Common/TileSpawnSpellData.gd" id="1_pyopk"]
+[ext_resource type="PackedScene" uid="uid://cuukoxnbdho76" path="res://Magic/WorldEffects/WindArea/WindArea.tscn" id="2_pyopk"]
+
+[resource]
+script = ExtResource("1_pyopk")
+world_effect_scene = ExtResource("2_pyopk")
+spell_name = "Cloud"
+metadata/_custom_type_script = "uid://cioouoi3uxhrf"

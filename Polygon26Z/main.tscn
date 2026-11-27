@@ -90,6 +90,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 script = ExtResource("6_272bh")
 health_bar = NodePath("HealthBar")
 health_label = NodePath("HealthBar/HealthLabel")

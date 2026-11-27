@@ -138,6 +138,21 @@ func get_wall(grid_coords: Vector2i) -> bool:
 func get_ground_tile(grid_coords: Vector2i):
 	return ground_layer.get_cell_tile_data(grid_coords)
 
+func try_cast_tile_effect(effect_scene: PackedScene, grid_coords: Vector2i) -> bool:
+	if not effect_scene:
+		return false
+	
+	if not get_ground_tile(grid_coords) or get_wall(grid_coords):
+		print("Cannot cast here: invalid ground or wall!")
+		return false
+	
+	var current_tile_effect: WorldEffect = get_tile_effect(grid_coords)
+	if current_tile_effect:
+		return try_mix_effects(effect_scene, grid_coords)
+	
+	on_world_effect_casted(effect_scene, grid_coords)
+	return true
+
 func try_mix_effects(new_effect_scene: PackedScene, grid_coords: Vector2i) -> bool:
 	var current_effect: WorldEffect = active_effects.get(grid_coords)
 	var new_effect: WorldEffect = new_effect_scene.instantiate() as WorldEffect

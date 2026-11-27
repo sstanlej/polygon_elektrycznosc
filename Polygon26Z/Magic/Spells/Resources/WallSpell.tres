@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileSpawnSpellData" format=3 uid="uid://bayccnat1e0lu"]
+
+[ext_resource type="Script" uid="uid://cioouoi3uxhrf" path="res://Magic/Spells/Common/TileSpawnSpellData.gd" id="1_j5fbm"]
+[ext_resource type="PackedScene" uid="uid://b6bgjuelt8bng" path="res://Magic/WorldEffects/EarthBlock/EarthBlock.tscn" id="2_ajwkk"]
+
+[resource]
+script = ExtResource("1_j5fbm")
+world_effect_scene = ExtResource("2_ajwkk")
+spell_name = "Wall"
+metadata/_custom_type_script = "uid://cioouoi3uxhrf"
