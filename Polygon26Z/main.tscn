@@ -57,7 +57,8 @@ tile_set = SubResource("TileSet_7mycd")
 rendering_quadrant_size = 96
 physics_quadrant_size = 96
 
-[node name="WorldEffectsContainer" type="Node" parent="." unique_id=602395410 groups=["WorldEffectsContainer"]]
+[node name="WorldEffectsContainer" type="Node2D" parent="." unique_id=432912962 groups=["WorldEffectsContainer"]]
+y_sort_enabled = true
 
 [node name="EntitiesYSort" type="Node2D" parent="." unique_id=2078978757]
 y_sort_enabled = true

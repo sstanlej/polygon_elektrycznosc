@@ -7,11 +7,12 @@
 size = Vector2(16, 16)
 
 [node name="EarthBlock" type="Node2D" unique_id=645541090 node_paths=PackedStringArray("progress_bar", "duration_timer")]
+z_index = 10
 script = ExtResource("1_hqint")
 effect_name = "Earth Block"
 progress_bar = NodePath("ProgressBar")
 duration_timer = NodePath("Timer")
-duration = 10.0
+duration = 20.0
 blocks_movement = true
 metadata/_custom_type_script = "uid://1psvn2m7nkoh"
 
