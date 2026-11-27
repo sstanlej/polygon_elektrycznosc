@@ -46,7 +46,6 @@ func try_cast_spell(is_primary: bool) -> void:
 	if not current_orb:
 		return
 	
-	print(current_orb)
 	var spell: SpellData = current_orb.primary_spell if is_primary else current_orb.secondary_spell
 	if not spell:
 		return
