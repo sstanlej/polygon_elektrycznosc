@@ -10,12 +10,14 @@
 radius = 51.009804
 
 [node name="Enemy_test" type="CharacterBody2D" unique_id=391801368 node_paths=PackedStringArray("health_bar", "health_component")]
+z_index = 10
 script = ExtResource("1_pq40t")
 health_bar = NodePath("HealthBar")
 health_component = NodePath("HealthComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094052858]
 texture_filter = 1
+position = Vector2(0, -81)
 scale = Vector2(6, 6)
 texture = ExtResource("2_v6g5f")
 
@@ -26,6 +28,7 @@ metadata/_custom_type_script = "uid://bdlqcd67yqw8a"
 
 [node name="MovementController" type="Node" parent="." unique_id=1522177853]
 script = ExtResource("3_6e2ki")
+target_desired_distance = 75.0
 base_movement_speed = 75.0
 
 [node name="StatusEffectsComponent" type="Node" parent="." unique_id=688599582]
@@ -35,13 +38,14 @@ metadata/_custom_type_script = "uid://xy7y1i3ihpty"
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=50529330]
 modulate = Color(0, 1, 0, 1)
 offset_left = -79.0
-offset_top = -115.0
+offset_top = -241.0
 offset_right = 79.0
-offset_bottom = -92.0
+offset_bottom = -218.0
 value = 50.0
 show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1621643199]
+position = Vector2(0, -74)
 shape = SubResource("CircleShape2D_6e2ki")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=751255406]

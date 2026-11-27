@@ -19,9 +19,8 @@
 radius = 7.0
 height = 18.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocryv"]
-radius = 21.0
-height = 72.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_6e2ki"]
+radius = 20.84
 
 [sub_resource type="Animation" id="Animation_owvpp"]
 resource_name = "Idle"
@@ -79,10 +78,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=584494599 groups=["Player"]]
-z_index = 15
+z_index = 10
 script = ExtResource("1_lu8i8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476062981]
+position = Vector2(0, -83)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_owvpp")
 hframes = 4
@@ -96,9 +96,9 @@ position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_iplt1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
-position = Vector2(2, 62)
+position = Vector2(-1, -27)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_ocryv")
+shape = SubResource("CircleShape2D_6e2ki")
 
 [node name="MovementController" type="Node" parent="." unique_id=122565107]
 script = ExtResource("3_owvpp")
@@ -118,7 +118,7 @@ max_health = 100
 
 [node name="OrbsComponent" type="Node2D" parent="." unique_id=1705834887 node_paths=PackedStringArray("slots_container", "orb_generation_timer", "orb_generation_bar", "orb_cast_timer")]
 z_index = 20
-position = Vector2(-1, -172)
+position = Vector2(-1, -238)
 script = ExtResource("5_5c2io")
 slots_container = NodePath("SlotsContainer")
 orb_slot = ExtResource("8_ap3xn")
