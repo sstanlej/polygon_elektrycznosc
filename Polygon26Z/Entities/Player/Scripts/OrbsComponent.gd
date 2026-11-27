@@ -50,8 +50,7 @@ func try_cast_spell(is_primary: bool) -> void:
 	var spell: SpellData = current_orb.primary_spell if is_primary else current_orb.secondary_spell
 	if not spell:
 		return
-	
-	print("trying to cast ", spell.spell_name)
+
 	if spell.cast(caster, get_global_mouse_position(), grid_manager):
 		consume_current_orb()
 

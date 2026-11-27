@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BlowbackSpellData" format=3 uid="uid://cyvbrkdjiglbw"]
+
+[ext_resource type="Script" uid="uid://bkycj5g8etd0" path="res://Magic/Spells/Common/BlowbackSpellData.gd" id="1_jokyx"]
+
+[resource]
+script = ExtResource("1_jokyx")
+push_force = 1500.0
+spell_name = "Whiff"
+metadata/_custom_type_script = "uid://bkycj5g8etd0"
