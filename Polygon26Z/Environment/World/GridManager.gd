@@ -12,35 +12,41 @@ func _ready() -> void:
 	EventBus.world_effect_casted.connect(on_world_effect_casted)
 	EventBus.world_effect_expired.connect(on_world_effect_expired)
 	active_effects.clear()
-	initialize_astar()
+	# removed initialize_astar() method - replaced it with update_astar_region(...) called by world_generator
 
 func _process(_delta: float) -> void:
 	pass
 
-func initialize_astar() -> void:
+
+func update_astar_region(center_chunk: Vector2i, chunk_size: int, load_radius: int) -> void:
 	if not ground_layer or not wall_layer:
 		return
-	
-	var used_rect: Rect2i = ground_layer.get_used_rect()
-	if used_rect.size == Vector2i.ZERO:
-		return
-	
-	astar = AStarGrid2D.new()
-	astar.region = used_rect
-	astar.cell_size = ground_layer.tile_set.tile_size
-	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+
+	var min_cell: Vector2i = (center_chunk - Vector2i(load_radius, load_radius)) * chunk_size
+	var size_in_cells: int = (load_radius * 2 + 1) * chunk_size
+	var new_region := Rect2i(min_cell, Vector2i(size_in_cells, size_in_cells))
+
+	if not astar:
+		astar = AStarGrid2D.new()
+		astar.cell_size = ground_layer.tile_set.tile_size
+		astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+
+	astar.region = new_region
 	astar.update()
-	
+
 	for x in range(astar.region.position.x, astar.region.end.x):
 		for y in range(astar.region.position.y, astar.region.end.y):
-			var cell: Vector2i = Vector2i(x, y)
+			var cell := Vector2i(x, y)
 			if ground_layer.get_cell_source_id(cell) == -1 or wall_layer.get_cell_source_id(cell) != -1:
 				astar.set_point_solid(cell, true)
-	
+
 	for coords in active_effects:
-		var effect: WorldEffect = active_effects[coords]
-		if is_effect_blocking(effect):
-			astar.set_point_solid(coords, true)
+		if astar.is_in_boundsv(coords):
+			var effect: WorldEffect = active_effects[coords]
+			if is_effect_blocking(effect):
+				astar.set_point_solid(coords, true)
+
+	pathfinding_changed.emit()
 
 func is_effect_blocking(effect: WorldEffect) -> bool:
 	if not effect:
