@@ -40,7 +40,6 @@ func cast(caster: Node2D, target_position: Vector2, grid_manager: GridManager) -
 				if effects_comp:
 					effects_comp.add_effect(whiff_effect)
 
-	# 3. Interakcja z kafelkami ognia i wody (rozdmuchanie o 1 kratkę w kierunku podmuchu)
 	var existing_effect: WorldEffect = grid_manager.get_tile_effect(target_cell)
 	if existing_effect and existing_effect.effect_name in ["Fire Area", "Water Area"]:
 		var grid_dir: Vector2i
