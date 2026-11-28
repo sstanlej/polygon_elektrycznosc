@@ -4,10 +4,15 @@ class_name WorldGenerator extends Node
 @export var ground_layer: TileMapLayer
 @export var overlay_layer: TileMapLayer
 @export var grid_manager: GridManager
+@export var entities_container: Node2D
 
 @export_group("Generation Settings")
 @export var chunk_size: int = 20
 @export var load_radius: int = 1
+
+@export_group("Environment Spawning")
+@export var rock_scenes: Array[PackedScene] = []
+@export_range(0.0, 1.0) var rock_spawn_chance: float = 0.04
 
 @export_group("TileSet Data")
 @export var ground_source_id: int = 1
@@ -21,6 +26,9 @@ var player: Player
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
+	if player and grid_manager:
+		var center_cell := Vector2i(chunk_size / 2, chunk_size / 2)
+		player.global_position = grid_manager.grid_to_world(center_cell)
 
 func _process(_delta: float) -> void:
 	if not player:
@@ -61,4 +69,32 @@ func generate_chunk(chunk_coords: Vector2i) -> void:
 				ground_layer.set_cell(cell, ground_source_id, ground_atlas_coords)
 			if overlay_layer:
 				overlay_layer.set_cell(cell, overlay_source_id, overlay_atlas_coords)
-	print("generated chunk ", chunk_coords)
+
+	# Strefa bezpieczna w chunku (0, 0) - brak losowych obiektów
+	if chunk_coords == Vector2i.ZERO:
+		return
+
+	populate_chunk_environment(chunk_coords)
+
+func populate_chunk_environment(chunk_coords: Vector2i) -> void:
+	if rock_scenes.is_empty() or not entities_container:
+		return
+
+	var start_x: int = chunk_coords.x * chunk_size
+	var start_y: int = chunk_coords.y * chunk_size
+
+	for x in range(start_x, start_x + chunk_size):
+		for y in range(start_y, start_y + chunk_size):
+			if randf() < rock_spawn_chance:
+				var cell := Vector2i(x, y)
+				var rock_scene: PackedScene = rock_scenes.pick_random()
+				var rock_instance := rock_scene.instantiate() as EnvironmentObject
+				if not rock_instance:
+					continue
+
+				if grid_manager.can_place_environment_object(cell, rock_instance.footprint_size):
+					entities_container.add_child(rock_instance)
+					rock_instance.setup(grid_manager, cell)
+					grid_manager.register_environment_object(rock_instance, cell)
+				else:
+					rock_instance.queue_free()

@@ -6,6 +6,7 @@ signal pathfinding_changed
 @export var ground_layer: TileMapLayer
 @export var wall_layer: TileMapLayer
 var active_effects: Dictionary[Vector2i, WorldEffect]
+var environment_objects: Dictionary[Vector2i, EnvironmentObject] = {}
 var astar: AStarGrid2D
 
 func _ready() -> void:
@@ -46,6 +47,12 @@ func update_astar_region(center_chunk: Vector2i, chunk_size: int, load_radius: i
 			if is_effect_blocking(effect):
 				astar.set_point_solid(coords, true)
 
+	for coords in environment_objects:
+		if astar.is_in_boundsv(coords):
+			var env_obj: EnvironmentObject = environment_objects[coords]
+			if env_obj and env_obj.blocks_movement:
+				astar.set_point_solid(coords, true)
+	
 	pathfinding_changed.emit()
 
 func is_effect_blocking(effect: WorldEffect) -> bool:
@@ -151,6 +158,10 @@ func try_cast_tile_effect(effect_scene: PackedScene, grid_coords: Vector2i) -> b
 	if not get_ground_tile(grid_coords) or get_wall(grid_coords):
 		print("Cannot cast here: invalid ground or wall!")
 		return false
+		
+	if environment_objects.has(grid_coords):
+		print("Cannot cast here: blocked by environment object!")
+		return false
 	
 	var current_tile_effect: WorldEffect = get_tile_effect(grid_coords)
 	if current_tile_effect:
@@ -196,3 +207,35 @@ func on_world_effect_expired(effect_instance: WorldEffect, grid_coords: Vector2i
 		pathfinding_changed.emit()
 		
 	print(effect_instance.effect_name, " expired at ", grid_coords)
+
+
+func can_place_environment_object(origin_cell: Vector2i, footprint: Vector2i) -> bool:
+	for x in range(footprint.x):
+		for y in range(footprint.y):
+			var cell: Vector2i = origin_cell + Vector2i(x, y)
+			if not get_ground_tile(cell) or get_wall(cell):
+				return false
+			if environment_objects.has(cell) or active_effects.has(cell):
+				return false
+	return true
+
+func register_environment_object(obj: EnvironmentObject, origin_cell: Vector2i) -> void:
+	obj.occupied_cells.clear()
+	for x in range(obj.footprint_size.x):
+		for y in range(obj.footprint_size.y):
+			var cell: Vector2i = origin_cell + Vector2i(x, y)
+			obj.occupied_cells.append(cell)
+			environment_objects[cell] = obj
+			if obj.blocks_movement:
+				set_cell_solid(cell, true)
+	pathfinding_changed.emit()
+
+func unregister_environment_object(obj: EnvironmentObject) -> void:
+	for cell in obj.occupied_cells:
+		if environment_objects.get(cell) == obj:
+			environment_objects.erase(cell)
+		if obj.blocks_movement and not get_wall(cell):
+			var effect: WorldEffect = active_effects.get(cell)
+			if not is_effect_blocking(effect):
+				set_cell_solid(cell, false)
+	pathfinding_changed.emit()

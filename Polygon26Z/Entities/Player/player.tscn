@@ -20,7 +20,7 @@ radius = 7.0
 height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6e2ki"]
-radius = 20.84
+radius = 31.0
 
 [sub_resource type="Animation" id="Animation_owvpp"]
 resource_name = "Idle"
@@ -95,7 +95,7 @@ position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_iplt1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299990599]
-position = Vector2(0, 60)
+position = Vector2(0, 51)
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_6e2ki")
 

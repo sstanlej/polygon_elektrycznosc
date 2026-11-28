@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bo81ocqnsrr5g"]
+
+[ext_resource type="Script" uid="uid://b8erljkv8vtuf" path="res://Environment/Objects/Common/EnvironmentObject.gd" id="1_ogwo0"]
+[ext_resource type="Texture2D" uid="uid://ou6qwd1pvlsn" path="res://Environment/Tilemap/Art/environment.png" id="2_ob42h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jatxm"]
+radius = 19.026299
+
+[node name="SmallRock3" type="Node2D" unique_id=1642220651]
+z_index = 10
+script = ExtResource("1_ogwo0")
+metadata/_custom_type_script = "uid://b8erljkv8vtuf"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=322971120]
+texture = ExtResource("2_ob42h")
+region_enabled = true
+region_rect = Rect2(1056, 192, 96, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1424984598]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1018789756]
+position = Vector2(1, 11)
+shape = SubResource("CircleShape2D_jatxm")

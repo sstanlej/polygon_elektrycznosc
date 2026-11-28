@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://de5fxv6harjul" path="res://Environment/World/WorldGenerator.gd" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://cpfi0fp6j7d6r" path="res://Entities/Camera/Scripts/CameraMovement.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://g57mubwyy04j" path="res://UI/GameOverlay/HUD/HUDManager.gd" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dh4rsp3mcbd3f" path="res://Environment/Objects/Scenes/SmallRock1.tscn" id="7_kek77"]
+[ext_resource type="PackedScene" uid="uid://bulsbf2hay2x2" path="res://Environment/Objects/Scenes/SmallRock2.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bo81ocqnsrr5g" path="res://Environment/Objects/Scenes/SmallRock3.tscn" id="9_dg77c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("2_7mycd")
@@ -77,12 +80,14 @@ world_effects_container = NodePath("../WorldEffectsContainer")
 ground_layer = NodePath("../GroundLayer")
 wall_layer = NodePath("../WallLayer")
 
-[node name="WorldGenerator" type="Node" parent="." unique_id=1992771425 node_paths=PackedStringArray("ground_layer", "overlay_layer", "grid_manager")]
+[node name="WorldGenerator" type="Node" parent="." unique_id=1992771425 node_paths=PackedStringArray("ground_layer", "overlay_layer", "grid_manager", "entities_container")]
 script = ExtResource("6_5vw27")
 ground_layer = NodePath("../GroundLayer")
 overlay_layer = NodePath("../OverlayLayer")
 grid_manager = NodePath("../GridManager")
+entities_container = NodePath("../EntitiesYSort")
 chunk_size = 16
+rock_scenes = Array[PackedScene]([ExtResource("7_kek77"), ExtResource("8_efxa6"), ExtResource("9_dg77c")])
 
 [node name="CameraFrame" type="Node2D" parent="." unique_id=475805083]
 script = ExtResource("6_7mycd")
